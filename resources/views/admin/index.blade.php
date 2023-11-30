@@ -77,7 +77,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Quản Lý Sản Phẩm 
+                Quản Lý Sản Phẩm
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -217,5 +217,6 @@
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="dist/js/adminlte.js"></script>
 <script src="dist/js/pages/dashboard.js"></script>
+{{-- Adsjhdashdjsahdkjas --}}
 </body>
 </html>
