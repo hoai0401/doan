@@ -188,24 +188,17 @@
       </nav>
     </div>
   </aside>
-
   <div class="content-wrapper">
-    <!-- Content goes here -->
   </div>
-
   <footer class="main-footer">
     <strong>Admin</strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.1
     </div>
   </footer>
-
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
   </aside>
-
 </div>
-
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <script>
