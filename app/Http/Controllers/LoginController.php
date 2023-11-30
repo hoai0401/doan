@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function showForm()
     {
-        return view('Users.login');
+        return view('login');
     }
 
     /**
