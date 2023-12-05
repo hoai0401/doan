@@ -14,7 +14,7 @@ return new class extends Migration
             $table->integer('stock_quantity');
             $table->unsignedBigInteger('size_id');
             $table->unsignedBigInteger('color_id');
-            $table->string('image');
+            $table->string('image',255);
             $table->timestamps();
             $table->softDeletes();
         });

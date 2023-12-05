@@ -11,8 +11,6 @@ return new class extends Migration
         // products
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('set null');
-            $table->foreign('imageID')->references('id')->on('images')->onDelete('cascade');
         });
 
         // comments
@@ -42,11 +40,6 @@ return new class extends Migration
         Schema::table('carts', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('product_details')->onDelete('cascade');
-        });
-
-        // slideshows
-        Schema::table('slideshows', function (Blueprint $table) {
-            $table->foreign('imageID')->references('id')->on('images')->onDelete('cascade');
         });
     }
 

@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('slideshows', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('imageID');
+            $table->string('image',255);
             $table->timestamps();
             $table->softDeletes();
         });

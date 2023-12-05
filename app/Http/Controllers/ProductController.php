@@ -5,80 +5,61 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $lst=Category::all();
+        return view('admin_product.product-create',['lst'=>$lst]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreProductRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreProductRequest $request)
     {
-        //
+        $p = Product::create([
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'price'=>$request->price,
+            'stock_quantity'=>$request->stock_quantity,
+            'category_id'=>$request->category,
+            'price'=>$request->price,
+            'image'=>''
+        ]);
+        // dd($p);
+        // Đường dẫn lưu có id sản phẩm để dễ quản lý
+        $path = $request->image->store('upload/product/'.$p->id,'public');
+        $p->image=$path;
+        // dd($p->save());
+        $p->save();
+        // có thể tạo view cho route  này nếu muốn, hoặc redirect về  trang ds sản phẩm
+        return view('admin.index');
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Product $product)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Product $product)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateProductRequest  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateProductRequest $request, Product $product)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Product $product)
     {
         //

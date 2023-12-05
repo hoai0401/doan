@@ -26,5 +26,5 @@ Route::get('/signup',[LoginController::class,'showForm'])->name('signup');
 Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
 
 Route::get('/', function () {
-    return view('home');
+    return view('layouts.home');
 });

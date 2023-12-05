@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->text('content');
             $table->date('review_day');
-            $table->string('image');
+            $table->string('image',255);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('commennt_id');

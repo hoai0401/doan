@@ -12,10 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->text('description');
+            $table->bigInteger('price');
             $table->integer('stock_quantity');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('promotion_id')->nullable();
-            $table->unsignedBigInteger('imageID');
+            $table->string('image',255);
             $table->timestamps();
             $table->softDeletes();
         });
