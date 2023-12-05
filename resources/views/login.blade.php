@@ -17,14 +17,23 @@
 <div class="login-page">
   <div class="form">
 
-    <form>
+    <form method="post" action="{{ route('login') }}">
+        @csrf
       <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
-      <input type="text" placeholder="&#xf007;  username"/>
-      <input type="password" id="password" placeholder="&#xf023;  password"/>
+      <label>Email:</label>
+        <input type="email" name="email" required>
+        @if($errors->has('email'))
+            <div class="error">{{ $errors->first('email') }}</div>
+        @endif
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        @if($errors->has('password'))
+            <div class="error">{{ $errors->first('password') }}</div>
+        @endif
       <i class="fas fa-eye" onclick="show()"></i>
       <br>
       <br>
-      <button>LOGIN</button>
+      <input type="submit" value="Login">
       <p class="message"></p>
     </form>
 
