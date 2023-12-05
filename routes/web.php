@@ -20,6 +20,9 @@ Route::middleware('auth')->group(function(){
 Route::get('/login',[LoginController::class,'showForm'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate'])->name('login');
 
+Route::get('/signup',[LoginController::class,'showForm'])->name('signup');
+Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
+
 Route::get('/', function () {
     return view('home');
 });
