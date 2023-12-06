@@ -118,8 +118,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (1).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Áo polo</p>
-                            <p class="gia-tien">20.000.000đ<span class="gia-cu">5.000.000đ</span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">633,000 <span style="font-size: 14px">đ</span><span class="gia-cu">800,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -130,8 +130,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (2).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Xiaomi Redmi Note 6 Pro </p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay cao cấp</p>
+                            <p class="gia-tien">399,000 <span style="font-size: 14px">đ</span><span class="gia-cu">500,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -142,8 +142,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (3).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay cao cấp</p>
+                            <p class="gia-tien">533,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -154,8 +154,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (4).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay</p>
+                            <p class="gia-tien">299,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -166,8 +166,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (5).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay</p>
+                            <p class="gia-tien">483,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -178,8 +178,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (6).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">áo polo ngắn tay</p>
+                            <p class="gia-tien">399.000<span style="font-size: 14px">đ</span><span class="gia-cu">500.000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -190,8 +190,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (7).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">517,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -202,8 +202,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (8).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">633,000<span style="font-size: 14px">đ</span><span class="gia-cu">800,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -222,8 +222,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (9).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">199,000<span style="font-size: 14px">đ</span><span class="gia-cu">300,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -234,8 +234,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (10).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Xiaomi Redmi Note 6 Pro </p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">225,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -246,8 +246,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (11).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">225,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -258,8 +258,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (12).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">417,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -270,8 +270,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (13).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">299,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -282,8 +282,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (14).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">267,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -294,8 +294,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (15).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">250,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
@@ -306,8 +306,8 @@
                             <div class="hinh-sp">
                                 <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (16).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
-                            <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">517,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
                             <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
