@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         // \App\Models\User::find(1)->update(['is_admin'=>true]);
-        // // \App\Models\User::factory(10)->create();
+        // // // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'user',

@@ -11,6 +11,7 @@ return new class extends Migration
         // products
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
         });
 
         // comments

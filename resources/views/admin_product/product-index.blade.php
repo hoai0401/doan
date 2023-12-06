@@ -2,55 +2,45 @@
 
 @section('title', 'Product list')
 
+@section('content')
 @section('header')
     @parent
-    &gt; <a href="{{ route('products.index') }}">Product</a>
+    <!-- &gt; <a href="{{ route('products.index') }}">Product</a>
+    sửa -->
 @endsection
-
-@section('content')
-<h1>Danh sách các sản phẩm </h1>
-    <div class="product-grid">
-        <div class="product-container">
-            @foreach ($lst as $p)
-                <div class="product">
-                    <img src="{{ $p->image }}" alt="{{ $p->name }}">
-                    <a href="{{ route('products.show', ['product' => $p]) }}">
-                        <h3>{{ $p->name }}</h3>
-                        <p>Giá: {{ number_format($p->price, 0, '.', '.') }} VNĐ</p>
-                    </a>
-                </div>
+    <h1>Danh mục các sản phẩm</h1>
+    <link rel="stylesheet" href="{{ asset('css_view/css.css') }}">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Mô tả</th>
+                <th>Giá</th>
+                <th>Số lượng tồn kho</th>
+                <th>Loại sản phẩm</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach ($lst as $p)
+                <tr>
+                    <td><img src="{{ $p->image }}" alt="{{ $p->name }}" style="max-width: 100px; max-height: 100px; object-fit: contain;"></td>
+                    <td>{{ $p->name }}</td>
+                    <td>{{ $p->description }}</td>
+                    <td>{{ number_format($p->price, 0, '.', '.') }} VNĐ</td>
+                    <td>{{ $p->stock_quantity }}</td>
+                    <td>{{ $p->category_id }}</td>
+                    <td>
+                        <a href="{{ route('products.edit', ['product' => $p]) }}" class="btn btn-warning">Edit</a>
+                        <form method="post" action="{{ route('products.destroy', ['product' => $p]) }}" style="display: inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
-        </div>
-    </div>
-
-    <style>
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px; /* Điều chỉnh khoảng cách giữa các sản phẩm  */
-        }
-
-        .product {
-            width: calc(33.33% - 20px); /* Điều chỉnh độ rộng của từng sản phẩm (33,33% cho 3 cột) */
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9; /* Tùy chọn: Thêm màu nền để tách biệt tốt hơnn */
-        }
-
-        .product img {
-            max-width: 100%; /*Đảm bảo hình ảnh không vượt quá chiều rộng vùng chứa */
-            max-height: 100%; /* Đảm bảo hình ảnh không vượt quá chiều cao vùng chứa */
-            object-fit: contain;
-        }
-
-        .product h3 {
-            margin-top: 10px;
-        }
-    </style>
+        </tbody>
+    </table>
 @endsection
