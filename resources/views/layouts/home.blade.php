@@ -116,11 +116,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/xiaomi-redmi-note-6-pro-32gb-blue-600x600.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (1).jpg" class="hinh">
                             </div>
-                            <p class="ten-sp">Iphone XS</p>
+                            <p class="ten-sp">Áo polo</p>
                             <p class="gia-tien">20.000.000đ<span class="gia-cu">5.000.000đ</span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 1-->
@@ -128,11 +128,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3e-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (2).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Xiaomi Redmi Note 6 Pro </p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 2-->
@@ -140,11 +140,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3i-den-chipu-1-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (3).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 3-->
@@ -152,11 +152,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-p20-pro-2-600x600-600x600-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (4).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 4-->
@@ -164,11 +164,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/xiaomi-redmi-note-6-pro-32gb-blue-600x600.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (5).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 5-->
@@ -176,11 +176,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (6).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 6-->
@@ -188,11 +188,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (7).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 7-->
@@ -200,11 +200,11 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (8).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 8-->
@@ -220,11 +220,11 @@
                     <div class="product-box" id="sp001">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/xiaomi-redmi-note-6-pro-32gb-blue-600x600.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (9).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 1-->
@@ -232,11 +232,11 @@
                     <div class="product-box" id="sp002">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/dell-inspiron-5570-m5i5238w-office365-dai-dien-450x300-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (10).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Xiaomi Redmi Note 6 Pro </p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 2-->
@@ -244,11 +244,11 @@
                     <div class="product-box" id="sp003">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3i-den-chipu-1-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (11).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 3-->
@@ -256,11 +256,11 @@
                     <div class="product-box" id="sp004">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-p20-pro-2-600x600-600x600-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (12).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 4-->
@@ -268,11 +268,11 @@
                     <div class="product-box" id="sp005">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/xiaomi-redmi-note-6-pro-32gb-blue-600x600.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (13).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 5-->
@@ -280,11 +280,11 @@
                     <div class="product-box" id="sp006">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (14).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 6-->
@@ -292,11 +292,11 @@
                     <div class="product-box" id="sp007">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (15).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 7-->
@@ -304,11 +304,11 @@
                     <div class="product-box" id="sp008">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <div style="background-image: url(image/huawei-nova-3-2-400x400.jpg)" class="hinh"></div>
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (16).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Iphone XS</p>
                             <p class="gia-tien">2.000.000<span style="font-size: 14px">đ</span><span class="gia-cu">5.000.000<span style="font-size: 14px">đ</span></span></p>
-                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="image/icon-cart.png"></a></div>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
                         </a>
                     </div>
                     <!--end Hộp 8-->
