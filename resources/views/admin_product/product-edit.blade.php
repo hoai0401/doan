@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{ route('products.update', $product) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('products.update', $p) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

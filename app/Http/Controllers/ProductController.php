@@ -44,7 +44,6 @@ class ProductController extends Controller
             'price'=>$request->price,
             'stock_quantity'=>$request->stock_quantity,
             'category_id'=>$request->category,
-            'price'=>$request->price,
             'image'=>''
         ]);
         
@@ -66,24 +65,23 @@ class ProductController extends Controller
     {
         $this->fixImage($product);
         $lst = Category::all();
-        return view('admin_product.product-index',['p'=> $product,'lst'=>$lst]);
+        return view('admin_product.product-edit',['p'=> $product,'lst'=>$lst]);
     }
 
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $path = $product->image;
-       if($request->hasFile('image') && $request->image->isValid()){
-           $path = $request->image->store('upload/product/'.$product->id,'public');
-       }
        $product->fill([
             'name'=>$request->name,
             'description'=>$request->description,
             'price'=>$request->price,
             'stock_quantity'=>$request->stock_quantity,
             'category_id'=>$request->category,
-            'price'=>$request->price,
             'image'=>''
         ]);
+        $product->save();
+
+        $path = $request->image->store('upload/product/'.$product->id,'public');
+        $product->image=$path;
         $product->save();
         
        return redirect()->route('products.store',['product'=>$product]);
@@ -92,7 +90,6 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-       
         $product->delete();
         return redirect()->route('products.index');
     }

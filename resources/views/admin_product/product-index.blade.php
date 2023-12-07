@@ -30,7 +30,7 @@
                     <td>{{ $p->description }}</td>
                     <td>{{ number_format($p->price, 0, '.', '.') }} VNĐ</td>
                     <td>{{ $p->stock_quantity }}</td>
-                    <td>{{ $p->category_id }}</td>
+                    <td>{{ $p->category->name }}</td>
                     <td>
                         <a href="{{ route('products.edit', ['product' => $p]) }}" class="btn btn-warning">Edit</a>
                         <form method="post" action="{{ route('products.destroy', ['product' => $p]) }}" style="display: inline-block;">
