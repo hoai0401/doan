@@ -54,18 +54,11 @@ class ProductController extends Controller
 
     }
 
-
-    public function show(Product $product)
-    {
-
-    }
-
-
     public function edit(Product $product)
     {
         $this->fixImage($product);
         $lst = Category::all();
-        return view('admin_product.product-edit',['p'=> $product,'lst'=>$lst]);
+        return view('admin_product.product-edit', ['p' => $product, 'lst' => $lst]);
     }
 
     public function update(UpdateProductRequest $request, Product $product)
@@ -92,9 +85,5 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
-    }
-    public function cart()
-    {
-        return view('/');
     }
 }

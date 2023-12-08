@@ -2,12 +2,10 @@
 
 @section('header')
     @parent
-    <!-- > <a href="{{ route('products.index') }}">Products</a>
-    > Sửa sản phẩm -->
 @endsection
 
 @section('content')
-    <form method="post" action="{{ route('products.update', $p) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('products.update',$p) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -16,7 +14,6 @@
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $p->name) }}">
             @if($errors->has('name')) <span class="text-danger">{{ $errors->first('name') }}</span> @endif
         </div>
-
         <div class="form-group">
             <label for="price">Giá:</label>
             <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $p->price) }}">

@@ -14,11 +14,6 @@ class LoginController extends Controller
         return view('login');
     }
 
-    /**
-     * Handle an authentication attempt.
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function authenticate(Request $request): RedirectResponse // Corrected the typo in "Response"
     {
         $credentials = $request->validate([
@@ -41,12 +36,7 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->withInput($request->only('email')); // Corrected the typo in "withInput"
     }
-
-    /**
-     * Log the user out of the application.
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function logout(Request $request): RedirectResponse // Corrected the typo in "Response"
     {
         Auth::logout();

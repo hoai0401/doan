@@ -2,13 +2,10 @@
 
 @section('header')
     @parent
-    <!-- > <a href="{{ route('products.index') }}">Products</a>
-    > Sửa sản phẩm -->
 @endsection
     @section('content')
         <h1>Thêm sản phẩm</h1>
         <link rel="stylesheet" href="{{ asset('css_view/create.css') }}">
-
         <form method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
             @csrf
             

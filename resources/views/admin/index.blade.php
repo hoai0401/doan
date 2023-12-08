@@ -76,21 +76,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="pages/forms/general.html" class="nav-link">
+                      <a href="{{ route('categories.create') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Áo Polo</p>
+                          <p>Thêm Loại SP</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/forms/advanced.html" class="nav-link">
+                      <a href="{{ route('categories.index') }}"class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Áo Thun</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/forms/editors.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Quần Jean</p>
+                          <p>Danh sách loại SP</p>
                         </a>
                       </li>
                     </ul>
@@ -132,21 +126,26 @@
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-gift"></i>
+                    <i class="nav-icon fas fa-user"></i>
                       <p>
-                        Quản lý Khuyến Mãi
+                        Quản lý tài khoản
                         <i class="fas fa-angle-left right"></i>
                       </p>
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-user-cog"></i>
-                      <p>
-                        Quản lý Tài Khoản
-                        <i class="fas fa-angle-left right"></i>
-                      </p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                      <a href="{{ route('admin_users.create') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Thêm Tài Khoản</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                      <a href="{{ route('admin_users.index') }}"class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Danh Tài Khoản</p>
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
