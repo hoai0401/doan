@@ -8,11 +8,24 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
+
 </head>
 <body>
     <!--------------------------------head------------------------------->
     <header>
+    
         <div class="logo">
+            <svg viewBox="0 0 800 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="50%"
+                dy=".35em">Shop HTT</text>
+            </symbol>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            </svg>
             <img src="{{ asset('img/logo-4.png') }}" alt="">
         </div>
 

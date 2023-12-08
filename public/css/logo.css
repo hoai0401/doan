@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+
+svg{
+  width: 80%;
+}
+@keyframes stroke{
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+.text{
+  font: 7em/1"Open Sans","Impact";
+  text-transform: uppercase;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 3;
+  animation: stroke 6s infinite linear;
+  fill:none;
+
+  &:nth-child(5n+1){
+    stroke: black;
+    animation-delay: -1.7s;
+  }
+  &:nth-child(5n+2){
+    stroke: #f5a503;
+    animation-delay: -2.4s;
+  }
+  &:nth-child(5n+3){
+    stroke: red;
+    animation-delay: -3.6s;
+  }
+  &:nth-child(5n+4){
+    stroke: blue;
+    animation-delay: -4.8s;
+  }
+  &:nth-child(5n+5){
+    stroke: #3aa1bf;
+    animation-delay: -6s;
+  }
+}
