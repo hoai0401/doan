@@ -12,13 +12,15 @@ class Product extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
-    public function image()
-    {
-        return $this->belongsTo(Image::class, 'image_id');
-    }
 
+    public function images()
+{
+    return $this->hasMany(Image::class, 'product_id');
+}
+    
 }

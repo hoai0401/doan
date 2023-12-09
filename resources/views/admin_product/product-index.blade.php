@@ -25,7 +25,7 @@
         <tbody>
         @foreach ($lst as $p)
                 <tr>
-                    <td><img src="{{ $p->image->image_url}}" alt=" " style="max-width: 100px; max-height: 100px; object-fit: contain;"></td>
+                <td><img src="{{ $p->image}}" alt=" " style="max-width: 100px; max-height: 100px; object-fit: contain;"></td>
                     <td>{{ $p->name }}</td>
                     <td>{{ $p->description }}</td>
                     <td>{{ number_format($p->price, 0, '.', '.') }} VNĐ</td>
