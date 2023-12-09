@@ -39,31 +39,33 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        $p = Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock_quantity' => $request->stock_quantity,
-            'category_id' => $request->category,
-            'image_id' => $request->image
-        ]);
-
-        if ($request->hasFile('image')) {
-            try {
+        
+        try {
+            // Tạo sản phẩm
+            $p = Product::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'stock_quantity' => $request->stock_quantity,
+                'category_id' => $request->category,
+                'image_id' => null,
+            ]);
+    
+            // Kiểm tra và lưu ảnh nếu có
+            if ($request->hasFile('image')) {
                 $image = Image::create([
-                    'image_url' => '',
-                    'product_id' => $p->id,
+                    'image_url' => '', 
                 ]);
-
+    
                 $path = $request->image->store('upload/product/' . $p->id, 'public');
                 $image->update(['image_url' => $path]);
                 $p->update(['image_id' => $image->id]);
-
-            } catch (\Exception $e) {
-                return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xử lý ảnh.');
             }
+    
+            return redirect()->route('products.index')->with('success', 'Sản phẩm đã được tạo thành công.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Đã xảy ra lỗi khi tạo sản phẩm.');
         }
-        return redirect()->route('products.index')->with('success', 'Sản phẩm đã được tạo thành công.');
     }
 
     public function edit(Product $product)
