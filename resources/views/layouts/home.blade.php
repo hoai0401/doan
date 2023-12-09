@@ -7,6 +7,8 @@
     <title>Shop Quần Áo</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css' )}}">
+    <link rel="stylesheet" href="{{ asset('css/product-box.css' )}}">
+    <link rel="stylesheet" href="{{ asset('css/section.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
 </head>
 <body>
@@ -109,8 +111,222 @@
             <div class="dot"></div>
         </div>
     </section>
+<br>
+    <!--khung chứa sản phẩm-->
+			<div class="khung-chua-san-pham">
+                <!--Phần section 1-->
+                <div class="section">
+                    <!--Thanh tiêu đề-->
+                    <p class="section-head">SẢN PHẨM NỔI BẬT</p>
+                    <!--End Thanh tiêu đề-->
+                    <!--Hộp 1-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (1).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">633,000 <span style="font-size: 14px">đ</span><span class="gia-cu">800,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 1-->
+                    <!--Hộp 2-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (2).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay cao cấp</p>
+                            <p class="gia-tien">399,000 <span style="font-size: 14px">đ</span><span class="gia-cu">500,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 2-->
+                    <!--Hộp 3-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (3).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay cao cấp</p>
+                            <p class="gia-tien">533,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 3-->
+                    <!--Hộp 4-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (4).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay</p>
+                            <p class="gia-tien">299,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 4-->
+                    <!--Hộp 5-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (5).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay</p>
+                            <p class="gia-tien">483,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 5-->
+                    <!--Hộp 6-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (6).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">áo polo ngắn tay</p>
+                            <p class="gia-tien">399.000<span style="font-size: 14px">đ</span><span class="gia-cu">500.000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 6-->
+                    <!--Hộp 7-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (7).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">517,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 7-->
+                    <!--Hộp 8-->
+                    <div class="product-box">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (8).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">633,000<span style="font-size: 14px">đ</span><span class="gia-cu">800,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 8-->
+
+                </div>
+                <!--end section 1-->
+                <!--Phần section 2-->
+                <div class="section">
+                    <!--Thanh tiêu đề-->
+                    <p class="section-head">SẢN PHẨM MỚI</p>
+                    <!--End Thanh tiêu đề-->
+                    <!--Hộp 1-->
+                    <div class="product-box" id="sp001">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (9).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">199,000<span style="font-size: 14px">đ</span><span class="gia-cu">300,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 1-->
+                    <!--Hộp 2-->
+                    <div class="product-box" id="sp002">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (10).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">225,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 2-->
+                    <!--Hộp 3-->
+                    <div class="product-box" id="sp003">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (11).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">225,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 3-->
+                    <!--Hộp 4-->
+                    <div class="product-box" id="sp004">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (12).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">417,000<span style="font-size: 14px">đ</span><span class="gia-cu">600,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 4-->
+                    <!--Hộp 5-->
+                    <div class="product-box" id="sp005">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (13).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">299,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 5-->
+                    <!--Hộp 6-->
+                    <div class="product-box" id="sp006">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (14).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">267,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 6-->
+                    <!--Hộp 7-->
+                    <div class="product-box" id="sp007">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (15).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">250,000<span style="font-size: 14px">đ</span><span class="gia-cu">400,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 7-->
+                    <!--Hộp 8-->
+                    <div class="product-box" id="sp008">
+                        <a class="box" href="thong-tin-sp.html">
+                            <div class="hinh-sp">
+                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (16).jpg" class="hinh">
+                            </div>
+                            <p class="ten-sp">Áo polo ngắn tay TQQ</p>
+                            <p class="gia-tien">517,000<span style="font-size: 14px">đ</span><span class="gia-cu">700,000<span style="font-size: 14px">đ</span></span></p>
+                            <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="img/icon-cart.png"></a></div>
+                        </a>
+                    </div>
+                    <!--end Hộp 8-->
+
+                </div>
+                <!--end section 2-->
+              </div>
+                <!--end khung chứa sản phẩm-->
 
     <!--------------------------------contact------------------------------->
+
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">
