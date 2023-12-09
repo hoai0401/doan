@@ -10,14 +10,14 @@ return new class extends Migration
     {
         // products
         Schema::table('products', function (Blueprint $table) {
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-
+            $table->foreign('category_id')->references('id')->on('categories');
+            
         });
 
         // comments
         Schema::table('comments', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('commennt_id')->references('id')->on('comments')->onDelete('cascade');
+            $table->foreign('commennt_id')->references('id')->on('comments');
         });
 
         // invoices
@@ -27,7 +27,7 @@ return new class extends Migration
 
         // invoice_details
         Schema::table('invoice_details', function (Blueprint $table) {
-            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
+            $table->foreign('invoice_id')->references('id')->on('invoices');
             $table->foreign('product_id')->references('id')->on('products');
         });
 
@@ -40,12 +40,15 @@ return new class extends Migration
         // carts
         Schema::table('carts', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('product_id')->references('id')->on('product_details')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('product_details');
+        });
+        // image
+        Schema::table('images', function (Blueprint $table) {
+           $table->foreignId('product_id')->constrained('products');
         });
     }
-
     public function down()
     {
-
+        //
     }
 };

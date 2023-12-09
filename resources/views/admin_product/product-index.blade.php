@@ -25,7 +25,13 @@
         <tbody>
         @foreach ($lst as $p)
                 <tr>
-                    <td><img src="{{ $p->image }}" alt="{{ $p->name }}" style="max-width: 100px; max-height: 100px; object-fit: contain;"></td>
+                <td>
+                        @if ($p->images->isNotEmpty())
+                            <img src="{{ asset($p->images->first()->image_url) }}" alt="{{ $p->name }}" style="max-width: 100px; max-height: 100px; object-fit: contain;">
+                        @else
+                            <span>No Image</span>
+                        @endif
+                    </td>
                     <td>{{ $p->name }}</td>
                     <td>{{ $p->description }}</td>
                     <td>{{ number_format($p->price, 0, '.', '.') }} VNĐ</td>

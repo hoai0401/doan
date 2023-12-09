@@ -7,19 +7,19 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     public function up()
-    {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100);
-            $table->text('description');
-            $table->bigInteger('price');
-            $table->integer('stock_quantity');
-            $table->unsignedBigInteger('category_id');
-            $table->string('image',255);
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+{
+    Schema::create('products', function (Blueprint $table) {
+        $table->id();
+        $table->string('name', 100);
+        $table->text('description');
+        $table->bigInteger('price');
+        $table->integer('stock_quantity');
+        $table->unsignedBigInteger('category_id');
+        $table->string('image', 255)->nullable()->default(null);
+        $table->timestamps();
+        $table->softDeletes();
+    });
+}
 
     public function down()
     {

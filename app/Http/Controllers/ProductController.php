@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -39,19 +40,30 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $p = Product::create([
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'price'=>$request->price,
-            'stock_quantity'=>$request->stock_quantity,
-            'category_id'=>$request->category,
-            'image'=>''
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'stock_quantity' => $request->stock_quantity,
+            'category_id' => $request->category,
+            'image' => ''
         ]);
         
-        $path = $request->image->store('upload/product/'.$p->id,'public');
-        $p->image=$path;
-        $p->save();
+        if ($request->hasFile('image')) {
+            try {
+                $image = Image::create([
+                    'image_url' => '',
+                    'product_id' => $p->id,
+                ]);
+        
+                $path = $request->image->store('upload/product/' . $p->id, 'public');
+                $image->update(['image_url' => $path]);
+                $p->update(['image' => $image->id]);
+        
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xử lý ảnh.');
+            }
+        }
         return redirect()->route('products.index')->with('success', 'Sản phẩm đã được tạo thành công.');
-
     }
 
     public function edit(Product $product)
