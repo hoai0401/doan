@@ -1,14 +1,11 @@
-@extends('layout.app')
+@extends('admin.index')
 
 @section('header')
     @parent
-    > <a href="{{ route('products.index') }}">Products</a>
-    > Sửa sản phẩm
 @endsection
 
 @section('content')
-    <!-- enctype của form để upload file -->
-    <form method="post" action="{{ route('products.update', $p) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('products.update',$p) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -17,7 +14,6 @@
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $p->name) }}">
             @if($errors->has('name')) <span class="text-danger">{{ $errors->first('name') }}</span> @endif
         </div>
-
         <div class="form-group">
             <label for="price">Giá:</label>
             <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $p->price) }}">
@@ -35,9 +31,9 @@
         </div>
 
         <div class="form-group">
-            <label for="desc">Mô tả:</label>
-            <textarea class="form-control" id="desc" name="desc">{{ old('desc', $p->desc) }}</textarea>
-            @if($errors->has('desc')) <span class="text-danger">{{ $errors->first('desc') }}</span> @endif
+            <label for="description">Mô tả:</label>
+            <textarea class="form-control" id="description" name="description">{{ old('description', $p->description) }}</textarea>
+            @if($errors->has('description')) <span class="text-danger">{{ $errors->first('description') }}</span> @endif
         </div>
 
         <div class="form-group">
@@ -47,12 +43,15 @@
             @if($errors->has('image'))<br>
             <span class="text-danger">{{ $errors->first('image') }}</span> @endif
         </div>
+        <div class="form-group">
+            <label for="stock_quantity">Số lượng tồn kho:</label>
+            <input type="text" class="form-control" id="stock_quantity" name="stock_quantity" value="{{ old('stock_quantity', $p->stock_quantity) }}">
+            @if($errors->has('stock_quantity')) <span class="text-danger">{{ $errors->first('stock_quantity') }}</span> @endif
 
         <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
     </form>
     
     <style>
-        /* Để làm cho các ô text box có độ rộng đồng đều */
         .form-control {
             width: 99%;
         }
