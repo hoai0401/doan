@@ -17,7 +17,7 @@ class ProductController extends Controller
             $p->image = Storage::url($p->image);
         }
         else
-        {           
+        {
             $p->image='/image/no_image_placeholder.png';
         }
     }
@@ -45,20 +45,20 @@ class ProductController extends Controller
             'price' => $request->price,
             'stock_quantity' => $request->stock_quantity,
             'category_id' => $request->category,
-            'image' => ''
+            'image_id' => $request->image
         ]);
-        
+
         if ($request->hasFile('image')) {
             try {
                 $image = Image::create([
                     'image_url' => '',
                     'product_id' => $p->id,
                 ]);
-        
+
                 $path = $request->image->store('upload/product/' . $p->id, 'public');
                 $image->update(['image_url' => $path]);
-                $p->update(['image' => $image->id]);
-        
+                $p->update(['image_id' => $image->id]);
+
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xử lý ảnh.');
             }
@@ -88,7 +88,7 @@ class ProductController extends Controller
         $path = $request->image->store('upload/product/'.$product->id,'public');
         $product->image=$path;
         $product->save();
-        
+
        return redirect()->route('products.store',['product'=>$product]);
     }
 

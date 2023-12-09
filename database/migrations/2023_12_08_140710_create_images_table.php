@@ -12,8 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('image_url');
             $table->timestamps();
-            $table->softDeletes();  
-            // $table->unsignedBigInteger('product_id')->nullable()->default(null);
+            $table->softDeletes();
         });
     }
     public function down()

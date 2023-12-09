@@ -15,7 +15,7 @@ return new class extends Migration
         $table->bigInteger('price');
         $table->integer('stock_quantity');
         $table->unsignedBigInteger('category_id');
-        $table->string('image', 255)->nullable()->default(null);
+        $table->unsignedBigInteger('image_id');
         $table->timestamps();
         $table->softDeletes();
     });
