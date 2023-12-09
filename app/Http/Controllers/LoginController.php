@@ -33,8 +33,7 @@ class LoginController extends Controller
             {
                 return redirect()->route('dashboard');
             }
-
-            return redirect('home');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([

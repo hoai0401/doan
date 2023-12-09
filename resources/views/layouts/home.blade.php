@@ -85,8 +85,15 @@
         <div class="others">
             <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
             <li><a href="" class="ti-headphone"></a></li>
-            <li><a href="{{ route('login') }}" class="ti-user"></a></li>
             <li><a href="" class="ti-shopping-cart"></a></li>
+            <li><a href="{{ route('login') }}" class="ti-user"></a></li>
+            @auth
+            <a class="nav-item">{{Auth::user()->name}}</a>
+                <form method="post" action="{{route('logout')}}">
+                    @csrf
+                    <input type="submit" value="Đăng Xuất" class="nav-link">
+                </form>
+            @endauth
         </div>
 
     </header>
