@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,8 +45,8 @@ Route::resource('/products',ProductController::class)->only(['index','show']);
 Route::get('/login',[LoginController::class,'showForm'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate'])->name('login');
 
-Route::get('/signup',[LoginController::class,'showForm'])->name('signup');
-Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
+Route::get('/signup',[RegisterController::class,'showForm'])->name('signup');
+Route::post('/signup',[RegisterController::class,'authenticate'])->name('signup');
 
 Route::get('/', function () {
     return view('layouts.home');
