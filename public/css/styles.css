@@ -106,6 +106,7 @@ header:hover {
 
 .others > li {
     padding: 0px 12px;
+    margin:0px;
     position: relative;
 }
 

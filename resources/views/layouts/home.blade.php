@@ -16,7 +16,7 @@
 <body>
     <!--------------------------------head------------------------------->
     <header>
-    
+
         <div class="logo">
             <svg viewBox="0 0 800 300">
             <symbol id="s-text">
@@ -101,14 +101,20 @@
             <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
             <li><a href="" class="ti-headphone"></a></li>
             <li><a href="" class="ti-shopping-cart"></a></li>
-            <li><a href="{{ route('login') }}" class="ti-user"></a></li>
-            @auth
-            <a class="nav-item">{{Auth::user()->name}}</a>
-                <form method="post" action="{{route('logout')}}">
-                    @csrf
-                    <input type="submit" value="Đăng Xuất" class="nav-link">
-                </form>
-            @endauth
+            <li class="user-menu"><a href="{{ route('login') }}" class="ti-user"></a>
+                <ul class="sub-menu">
+                    <li><a href="{{ route('login') }}">Dang nhap</a></li>
+                    <li><a href="">Quan li</a></li>
+                    <li> @auth
+                        <a class="nav-item">{{Auth::user()->name}}</a>
+                            <form method="post" action="{{route('logout')}}">
+                                @csrf
+                                <input type="submit" value="Đăng Xuất" class="nav-link">
+                            </form>
+                        @endauth
+                    </li>
+                </ul>
+            </li>
         </div>
 
     </header>
@@ -148,7 +154,7 @@
                     <div class="product-box">
                         <a class="box" href="thong-tin-sp.html">
                             <div class="hinh-sp">
-                                <img src="img/Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (2).jpg" class="hinh">
+                                <img src="img   /Sản phẩm/Áo thun/Áo polo nam/Ao-Polo-Coc-Tay (2).jpg" class="hinh">
                             </div>
                             <p class="ten-sp">Áo polo ngắn tay cao cấp</p>
                             <p class="gia-tien">399,000 <span style="font-size: 14px">đ</span><span class="gia-cu">500,000<span style="font-size: 14px">đ</span></span></p>

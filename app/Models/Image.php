@@ -10,9 +10,10 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = ['image_url'];
-    public function product()
+    protected $guarded = [];
+    public function products()
     {
-        return $this->belongsTo(Product::class, 'product_id');
+        return $this->hasMany(Product::class);
     }
 
 }

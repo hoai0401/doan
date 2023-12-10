@@ -35,7 +35,7 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->withInput($request->only('email')); // Corrected the typo in "withInput"
     }
-    
+
     public function logout(Request $request): RedirectResponse // Corrected the typo in "Response"
     {
         Auth::logout();
