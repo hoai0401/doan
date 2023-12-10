@@ -1,0 +1,42 @@
+
+.form-group {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin-top to move the button to a new line */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+.xMDeox {
+    width: 862px;
+    box-sizing: border-box;
+    margin-left: -0.3125rem;
+    /* min-width: 77px; */
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.13);
+    border-radius: 2.125rem;
+}

@@ -1116,3 +1116,45 @@ footer {
     background-color: #000;
     color: white;
 }
+/* Add this CSS to your stylesheet */
+.user-panel {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis; /* Add an ellipsis (...) when the text overflows */
+}
+
+.user-panel .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-panel .info a {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis; /* Add an ellipsis (...) when the text overflows */
+}
+/* Add this CSS to your stylesheet */
+.user-panel:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    margin-right: 4cm;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
