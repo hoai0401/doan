@@ -49,9 +49,7 @@
           </form>
 
           <form class="login-form">
-            <button type="button" onclick="window.location.href='login.html'">
-              SIGN UP
-            </button>
+            <a href="{{ route('login') }}"><button type="button">LOGIN</button></a>
           </form>
         </div>
       </div>
