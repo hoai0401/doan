@@ -96,9 +96,9 @@
             <li><a href="">LIFESTYLE</a></li>
             <li><a href="">THÔNG TIN</a></li>
         </div>
-
-        <div class="others">
+            <div class="others">
             <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
+<<<<<<< HEAD
             <li><a href="" class="ti-headphone"></a></li>
             <li><a href="" class="ti-shopping-cart"></a></li>
             <li class="user-menu"><a href="{{ route('login') }}" class="ti-user"></a>
@@ -116,6 +116,33 @@
                 </ul>
             </li>
         </div>
+=======
+                    <li><a href="" class="ti-shopping-cart"></a></li>
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        @guest
+                            <li><a href="{{ route('login') }}" class="ti-user">Đăng nhập</a></li>
+                        @endguest
+                        <!-- Hiển thị tên người dùng và biểu mẫu đăng xuất khi đã đăng nhập -->
+                        @auth
+                            <div class="user-dropdown">
+                                <div class="user-info">
+                                    <a class="nav-item" id="user-name">{{ Auth::user()->name }}</a>
+                                </div>
+                                <div class="dropdown-content">
+                                    <a href="{{ route('users.index') }}">Thông tin tài khoản</a>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
+                                </div>
+                            </div>
+                        @endauth
+                    </div>
+
+                    <!-- Thêm form đăng xuất -->
+                    <form id="logout-form" method="post" action="{{ route('logout') }}" style="display: none;">
+                        @csrf
+                    </form>
+
+    </div>
+>>>>>>> f5aca7aaa02c5dc8a63deedd9ade37fbbf297d02
 
     </header>
 
@@ -406,7 +433,17 @@
         dotItem[index].classList.add("active")
     }
 
-    setInterval(imgSlide, 5000)
+     document.querySelector('.user-panel').addEventListener('mouseover', function () {
+        // Show the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'block';
+        document.getElementById('user-name').classList.add('active');
+    });
+
+    document.querySelector('.user-panel').addEventListener('mouseout', function () {
+        // Hide the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'none';
+        document.getElementById('user-name').classList.remove('active');
+    });
 
 </script>
 </html>
