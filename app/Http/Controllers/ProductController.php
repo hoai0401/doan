@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -113,3 +113,4 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 }
+//
