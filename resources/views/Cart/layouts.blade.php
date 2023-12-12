@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="{{ asset('css/section.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-bJBEYRxpqUdZLJfYNt2yrTjJcMOh9vwlGgfcq2/oRPa7Rm81RcB2RQCIhU2f6a8a" crossorigin="anonymous">
 
 </head>
 <body>
     <!--------------------------------head------------------------------->
     <header>
-
+    
         <div class="logo">
             <svg viewBox="0 0 800 300">
             <symbol id="s-text">
@@ -96,10 +97,10 @@
             <li><a href="">LIFESTYLE</a></li>
             <li><a href="">THÔNG TIN</a></li>
         </div>
-        <div class="others">
+            <div class="others">
             <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
-            <li><a href="{{route('cart.index')}}" class="ti-shopping-cart"></a></li>
-        </div>
+                    <li><a href="" class="ti-headphone"></a></li>
+                    <li><a href="" class="ti-shopping-cart"></a></li>
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         @guest
                             <li><a href="{{ route('login') }}" class="ti-user">Đăng nhập</a></li>
@@ -126,8 +127,6 @@
     </div>
 
     </header>
-
-    <!--------------------------------slide------------------------------->
     <section id="slider">
         <div class="slider-container">
             <img src="{{ asset('img/slide1.jpg') }}" alt="">
@@ -139,26 +138,16 @@
         </div>
     </section>
 <br>
-			<div class="khung-chua-san-pham">
-                <div class="section"> 
-                </div>
+<div class="khung-chua-san-pham">
+                <!--Phần section 1-->
                 <div class="section">
-                    <p class="section-head">SẢN PHẨM MỚI</p>
-                </div>
-              </div>
-
-    <section class="contact-container">
-        <p>Tải ứng dụng</p>
-        <div class="app-google">
-            <img src="{{ asset('img/ios-download2.png') }}" >
-            <img src="{{ asset('img/google-download.png') }}" >
-        </div>
-        <p>Nhận bản tin</p>
-        <input type="text" placeholder="Nhập email của bạn...">
-    </section>
-
-    <!--------------------------------foot------------------------------->
-    <footer>
+                    <!--Thanh tiêu đề-->
+                    <p class="section-head">Thông tin giỏ hàng</p>
+    @section('header')
+    @show
+    @yield('content')
+    <br>
+     <footer>
         <div class="footer-top">
             <li><a href=""></a>Liên hệ</li>
             <li><a href=""></a>Tuyển dụng</li>
@@ -174,9 +163,7 @@
             ©Makima All rights reverved
         </div>
     </footer>
-
-
-</body>
+    </body>
 
 <script>
     const imgPosition = document.querySelectorAll(".slider-container img")
@@ -207,16 +194,15 @@
         dotItem[index].classList.add("active")
     }
 
-     document.querySelector('.user-panel').addEventListener('mouseover', function () {
+    setInterval(imgSlide, 5000)
+    document.querySelector('.user-panel').addEventListener('mouseover', function () {
         // Show the dropdown content
         document.querySelector('.dropdown-content').style.display = 'block';
-        document.getElementById('user-name').classList.add('active');
     });
 
     document.querySelector('.user-panel').addEventListener('mouseout', function () {
         // Hide the dropdown content
         document.querySelector('.dropdown-content').style.display = 'none';
-        document.getElementById('user-name').classList.remove('active');
     });
 
 </script>

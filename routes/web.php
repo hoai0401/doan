@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -49,6 +50,9 @@ Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+
+//Cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 Route::get('/', function () {
     return view('layouts.home');
