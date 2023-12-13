@@ -24,7 +24,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        
+
         $lst = Product::orderBy('id', 'desc')->get();
         foreach($lst as $p){
             $this->fixImage($p);
@@ -57,7 +57,7 @@ class ProductController extends Controller
                 ]);
 
                 $path = $request->image->store('upload/product/' . $p->id, 'public');
-                
+
                 // Lưu đường dẫn ảnh vào cả trường image của products và image_url của images
                 $image->update(['image_url' => $path]);
                 $p->update(['image' => $path]);
@@ -95,7 +95,7 @@ class ProductController extends Controller
             ]);
 
             $path = $request->image->store('upload/product/' . $product->id, 'public');
-            
+
             // Lưu đường dẫn ảnh vào cả trường image của products và image_url của images
             $image->update(['image_url' => $path]);
             $product->update(['image' => $path]);

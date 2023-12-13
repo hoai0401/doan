@@ -61,22 +61,22 @@ class AdminUserController extends Controller
             'password' => 'nullable|string|min:8',
             'phone' => 'required|string|max:255',
         ]);
-    
+
         $is_admin = $request->has('is_admin') ? 1 : 0;
         $emailVerifiedAt = $request->has('email_verified_at') ? now() : null;
-    
+
         $admin_user->name = $request->name;
         $admin_user->email = $request->email;
         $admin_user->is_admin = $is_admin;
         $admin_user->phone = $request->phone;
         $admin_user->email_verified_at = $emailVerifiedAt;
-    
+
         if ($request->filled('password')) {
             $admin_user->password = Hash::make($request->password);
         }
-    
+
         $admin_user->save();
-    
+
         return redirect()->route('admin_users.index')->with('success', 'Tài khoản đã được cập nhật thành công.');
     }
 

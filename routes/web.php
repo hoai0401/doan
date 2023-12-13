@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -35,7 +36,7 @@ Route::get('/admin_users/create', [AdminUserController::class, 'create'])->name(
 Route::post('/admin_users/store', [AdminUserController::class, 'store'])->name('admin_users.store');
 Route::get('/admin_users/{admin_user}/edit', [AdminUserController::class, 'edit'])->name('admin_users.edit');
 Route::put('/admin_users/{admin_user}', [AdminUserController::class, 'update'])->name('admin_users.update');
-Route::delete('/admin_users/{admin_user}', [AdminUserController::class, 'destroy'])->name('admin_users.destroy'); 
+Route::delete('/admin_users/{admin_user}', [AdminUserController::class, 'destroy'])->name('admin_users.destroy');
 
 //đăng nhập đăng kí
 Route::resource('/products',ProductController::class)->only(['index','show']);
@@ -55,6 +56,12 @@ Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
 
-Route::get('/', function () {
-    return view('layouts.home');
-});
+//Cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
+
+
+
