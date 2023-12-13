@@ -5,9 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-
-
 
 Route::middleware('auth')->group(function(){
     Route::resource('/products',ProductController::class)->except(['index','show']);
@@ -42,8 +41,14 @@ Route::delete('/admin_users/{admin_user}', [AdminUserController::class, 'destroy
 Route::resource('/products',ProductController::class)->only(['index','show']);
 Route::get('/login',[LoginController::class,'showForm'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate'])->name('login');
+
 Route::get('/signup',[LoginController::class,'showForm'])->name('signup');
 Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
+
+
+Route::get('/signup',[RegisterController::class,'showForm'])->name('signup');
+Route::post('/signup',[RegisterController::class,'authenticate'])->name('signup');
+
 
 //User
 Route::get('users', [UserController::class, 'index'])->name('users.index');
