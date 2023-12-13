@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
-
+//
 class HomeController extends Controller
 {
     protected function fixImage(Product $p)
