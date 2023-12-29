@@ -1159,3 +1159,19 @@ footer {
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
+
+
+.ten-sp {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Độ rộng tối đa của tên sản phẩm */
+}
+
+.ten-sp:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: unset;
+}
+

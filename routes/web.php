@@ -47,10 +47,6 @@ Route::post('/login',[LoginController::class,'authenticate'])->name('login');
 Route::get('/signup',[RegisterController::class,'showForm'])->name('signup');
 Route::post('/signup',[RegisterController::class,'register'])->name('signup');
 
-
-
-
-
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
@@ -65,6 +61,7 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
 
 
 

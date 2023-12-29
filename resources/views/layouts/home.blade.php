@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/section.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
 </head>
 <body>
@@ -19,7 +20,7 @@
 
         <div class="logo">
             <svg viewBox="0 0 800 300">
-            <symbol id="s-text">
+            <symbol id="s-text" >
                 <text text-anchor="middle" x="50%" y="50%"
                 dy=".35em">Shop HTT</text>
             </symbol>
@@ -140,42 +141,57 @@
     </section>
 <br>
 			<!-- resources/views/products/index.blade.php -->
-<div class="khung-chua-san-pham">
+<div id="myTable" class="khung-chua-san-pham">
     <!-- Phần sản phẩm nổi bật -->
     <div class="section">
         <p class="section-head">SẢN PHẨM NỔI BẬT</p>
         @foreach ($lst as $product)
             <div class="product-box">
                 <!-- Hiển thị thông tin sản phẩm -->
-                <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
-                    <div class="hinh-sp">
-                        <img src="{{  $product->image }}" class="hinh">
-                    </div>
-                    <p class="ten-sp">{{ $product->name }}</p>
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span><span class="gia-cu">{{ number_format($product->old_price) }}<span style="font-size: 14px">đ</span></span></p>
-                    <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
-                </a>
+                <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
+                    @csrf
+                    <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
+                        <div class="hinh-sp">
+                            <img src="{{ $product->image }}" class="hinh">
+                        </div>
+                        <p class="ten-sp">{{ $product->name }}</p>
+                        <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
+                        <div class="them-vao-gio-hang">
+                            <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
+                        </div>
+                    </a>
+                </form>
             </div>
         @endforeach
     </div>
 
+<br>
+<br>
+<br>
+<br>
     <!-- Phần sản phẩm mới -->
     <div class="section">
         <p class="section-head">SẢN PHẨM MỚI</p>
         @foreach ($lst as $product)
             <div class="product-box">
                 <!-- Hiển thị thông tin sản phẩm -->
-                <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
-                    <div class="hinh-sp">
-                        <img src="{{ $product->image }}" class="hinh">
-                    </div>
-                    <p class="ten-sp">{{ $product->name }}</p>
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span><span class="gia-cu">{{ number_format($product->old_price) }}<span style="font-size: 14px">đ</span></span></p>
-                    <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
-                </a>
+                <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
+                    @csrf
+                    <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
+                        <div class="hinh-sp">
+                            <img src="{{ $product->image }}" class="hinh">
+                        </div>
+                        <p class="ten-sp">{{ $product->name }}</p>
+                        <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
+                        <div class="them-vao-gio-hang">
+                            <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
+                        </div>
+                    </a>
+                </form>
             </div>
         @endforeach
     </div>
+
 </div>
 
 
@@ -209,7 +225,7 @@
 
 
 </body>
-
+<script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script>
     const imgPosition = document.querySelectorAll(".slider-container img")
     const imgContainer = document.querySelector(".slider-container")
@@ -252,4 +268,7 @@
     });
 
 </script>
+<script>$(document).ready( function () {
+    $('#myTable').DataTable();
+} );</script>
 </html>
