@@ -30,23 +30,25 @@
 
       <div class="login-page">
         <div class="form">
-          <form>
-            <lottie-player
-              src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
-              background="transparent"
-              speed="1"
-              style="justify-content: center"
-              loop
-              autoplay
-            ></lottie-player>
-            <input type="text" placeholder="full name" />
-            <input type="text" placeholder="email address" />
-            <input type="text" placeholder="pick a username" />
-            <input type="password" id="password" placeholder="set a password" />
-            <i class="fas fa-eye" onclick="show()"></i>
-            <br>
-            <br>
-          </form>
+            <form method="POST" action="{{ route('signup') }}">
+                @csrf
+                <lottie-player
+                    src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
+                    background="transparent"
+                    speed="1"
+                    style="justify-content: center"
+                    loop
+                    autoplay
+                ></lottie-player>
+                <input type="text" name="name" placeholder="Full Name" />
+                <input type="email" name="email" placeholder="Email Address" />
+                <input type="text" name="phone" placeholder="Phone Number" />
+                <input type="password" name="password" placeholder="Set a Password" />
+                <input type="password" name="password_confirmation" placeholder="Confirm Password" />
+                <button type="submit">SIGN UP</button>
+            </form>
+
+
 
           <form class="login-form">
             <a href="{{ route('login') }}"><button type="button">LOGIN</button></a>

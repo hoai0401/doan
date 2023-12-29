@@ -36,6 +36,7 @@
       <input type="submit" value="Login">
       <p class="message"></p>
     </form>
+    <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
 
     <form class="login-form">
       <a href="{{ route('signup') }}"><button type="button">SIGN UP</button></a>

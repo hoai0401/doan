@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
@@ -38,18 +39,20 @@ Route::get('/admin_users/{admin_user}/edit', [AdminUserController::class, 'edit'
 Route::put('/admin_users/{admin_user}', [AdminUserController::class, 'update'])->name('admin_users.update');
 Route::delete('/admin_users/{admin_user}', [AdminUserController::class, 'destroy'])->name('admin_users.destroy');
 
-//đăng nhập đăng kí
+//đăng nhập đăng kí quên mật khẩu
 Route::resource('/products',ProductController::class)->only(['index','show']);
 Route::get('/login',[LoginController::class,'showForm'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate'])->name('login');
 
-Route::get('/signup',[LoginController::class,'showForm'])->name('signup');
-Route::post('/signup',[LoginController::class,'authenticate'])->name('signup');
-
-
 Route::get('/signup',[RegisterController::class,'showForm'])->name('signup');
-Route::post('/signup',[RegisterController::class,'authenticate'])->name('signup');
+Route::post('/signup',[RegisterController::class,'register'])->name('signup');
 
+
+
+
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
 //User
 Route::get('users', [UserController::class, 'index'])->name('users.index');
