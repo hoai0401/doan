@@ -27,6 +27,7 @@ class ProductController extends Controller
 
         $this->fixImage($product);
         return view('products/product-show',  ['product'=>$product]);
+        //ksks
     }
 
     public function index()
