@@ -140,7 +140,6 @@
         </div>
     </section>
 <br>
-			<!-- resources/views/products/index.blade.php -->
 <div id="myTable" class="khung-chua-san-pham">
     <!-- Phần sản phẩm nổi bật -->
     <div class="section">
@@ -154,17 +153,28 @@
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
-                    <div class="them-vao-gio-hang">
-                        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
-                            @csrf
-                            <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
-                        </form>
-</div>
-
                 </a>
             </div>
         @endforeach
+
+        <!-- Hiển thị nút chuyển trang -->
+       
     </div>
+    <div class="custom-pagination" style="margin-top: 20px;">
+            @if ($lst->currentPage() > 1)
+                <a href="{{ $lst->previousPageUrl() }}">Previous</a>
+            @endif
+
+            @for ($i = 1; $i <= $lst->lastPage(); $i++)
+                <a href="{{ $lst->url($i) }}" class="{{ ($i == $lst->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
+            @endfor
+
+            @if ($lst->currentPage() < $lst->lastPage())
+                <a href="{{ $lst->nextPageUrl() }}">Next</a>
+            @endif
+        </div>
+</div>
+
 <br>
 
    

@@ -123,9 +123,7 @@
                     <form id="logout-form" method="post" action="{{ route('logout') }}" style="display: none;">
                         @csrf
                     </form>
-
-    </div>
-
+                    </div>
     </header>
     <section id="slider">
         <div class="slider-container">
