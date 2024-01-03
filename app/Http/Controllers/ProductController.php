@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
 
-
+        $this->fixImage($product);
         return view('products/product-show',  ['product'=>$product]);
     }
 
