@@ -62,6 +62,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 Route::get('/', [HomeController::class, 'index']);
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
-Route::get('/products', 'ProductController@show')->name('product.show');
+
 
 

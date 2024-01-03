@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin</title>
- 
+
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
@@ -23,7 +23,7 @@
               <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
               </li>
-              
+
             </ul>
           </nav>
           <div class="preloader flex-column justify-content-center align-items-center">
@@ -166,7 +166,7 @@
                       </p>
                     </a>
                   </li>
-                </ul>  
+                </ul>
               <form method="post" action="{{route('logout')}}" style="position:absolute;bottom:8px;">
               @csrf
               <input type="submit" value="Đăng Xuất" class="nav-link">
@@ -176,8 +176,8 @@
             </div>
               </aside>
             <div class="content-wrapper">
-              @yield('content') 
-            </div>  
+              @yield('content')
+            </div>
           <aside class="control-sidebar control-sidebar-dark">
           </aside>
         </div>
