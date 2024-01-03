@@ -22,6 +22,13 @@ class ProductController extends Controller
         }
     }
 
+    public function show(Product $product)
+    {
+
+
+        return view('products/product-show',  ['product'=>$product]);
+    }
+
     public function index()
     {
 

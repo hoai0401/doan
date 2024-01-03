@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
@@ -58,10 +58,10 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
-use App\Http\Controllers\HomeController;
+
 
 Route::get('/', [HomeController::class, 'index']);
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
-
+Route::get('/products', 'ProductController@show')->name('product.show');
 
 

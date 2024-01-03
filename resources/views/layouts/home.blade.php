@@ -148,19 +148,19 @@
         @foreach ($lst as $product)
             <div class="product-box">
                 <!-- Hiển thị thông tin sản phẩm -->
-                <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
-                    @csrf
-                    <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
-                        <div class="hinh-sp">
-                            <img src="{{ $product->image }}" class="hinh">
-                        </div>
-                        <p class="ten-sp">{{ $product->name }}</p>
-                        <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
-                        <div class="them-vao-gio-hang">
+                <a class="box" href="{{ route('products.show', ['product' => $product])}}">
+                    <div class="hinh-sp">
+                        <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
+                    </div>
+                    <p class="ten-sp">{{ $product->name }}</p>
+                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
+                    <div class="them-vao-gio-hang">
+                        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
+                            @csrf
                             <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
-                        </div>
-                    </a>
-                </form>
+                        </form>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>
