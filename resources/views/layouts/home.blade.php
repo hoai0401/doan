@@ -153,6 +153,7 @@
                         <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
+<<<<<<< HEAD
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
                     <div class="them-vao-gio-hang">
                         <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
@@ -160,10 +161,15 @@
                             <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
                         </form>
                     </div>
+=======
+                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></span></p>
+                    <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
+>>>>>>> 6c29288a4892ca7e66a04935cc723e658dae258d
                 </a>
             </div>
         @endforeach
     </div>
+<<<<<<< HEAD
 {{-- trung --}}
 <br>
 <br>
@@ -195,6 +201,8 @@
 </div>
 
 
+=======
+>>>>>>> 6c29288a4892ca7e66a04935cc723e658dae258d
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">
