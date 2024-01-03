@@ -153,56 +153,21 @@
                         <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
-<<<<<<< HEAD
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
                     <div class="them-vao-gio-hang">
                         <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
                             @csrf
                             <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
                         </form>
-                    </div>
-=======
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></span></p>
-                    <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
->>>>>>> 6c29288a4892ca7e66a04935cc723e658dae258d
+</div>
+
                 </a>
             </div>
         @endforeach
     </div>
-<<<<<<< HEAD
-{{-- trung --}}
 <br>
-<br>
-<br>
-<br>
-    <!-- Phần sản phẩm mới -->
-    <div class="section">
-        <p class="section-head">SẢN PHẨM MỚI</p>
-        @foreach ($lst as $product)
-            <div class="product-box">
-                <!-- Hiển thị thông tin sản phẩm -->
-                <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
-                    @csrf
-                    <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
-                        <div class="hinh-sp">
-                            <img src="{{ $product->image }}" class="hinh">
-                        </div>
-                        <p class="ten-sp">{{ $product->name }}</p>
-                        <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
-                        <div class="them-vao-gio-hang">
-                            <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
-                        </div>
-                    </a>
-                </form>
-            </div>
-        @endforeach
-    </div>
 
-</div>
-
-
-=======
->>>>>>> 6c29288a4892ca7e66a04935cc723e658dae258d
+   
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">
