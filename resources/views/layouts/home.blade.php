@@ -152,33 +152,12 @@
                         <img src="{{  $product->image }}" class="hinh">
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span><span class="gia-cu">{{ number_format($product->old_price) }}<span style="font-size: 14px">đ</span></span></p>
+                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></span></p>
                     <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
                 </a>
             </div>
         @endforeach
     </div>
-
-    <!-- Phần sản phẩm mới -->
-    <div class="section">
-        <p class="section-head">SẢN PHẨM MỚI</p>
-        @foreach ($lst as $product)
-            <div class="product-box">
-                <!-- Hiển thị thông tin sản phẩm -->
-                <a class="box" href="{{ url('thong-tin-sp/' . $product->id) }}">
-                    <div class="hinh-sp">
-                        <img src="{{ $product->image }}" class="hinh">
-                    </div>
-                    <p class="ten-sp">{{ $product->name }}</p>
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span><span class="gia-cu">{{ number_format($product->old_price) }}<span style="font-size: 14px">đ</span></span></p>
-                    <div class="them-vao-gio-hang"><a class="them" href="#">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a></div>
-                </a>
-            </div>
-        @endforeach
-    </div>
-</div>
-
-
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">

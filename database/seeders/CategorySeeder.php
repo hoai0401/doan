@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create(['name'=>'Áo Polo']);
-        Category::create(['name' => 'Áo Thun']);
+        Category::create(['name' => 'Áo Khoắc']);
         Category::create(['name' => 'Quần JEAN']);
     }
 }

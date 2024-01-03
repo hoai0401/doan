@@ -66,7 +66,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('products.index')->with('success', 'Sản phẩm đã được tạo thành công.');
+        return redirect()->route('products.index' );
     }
 
 
