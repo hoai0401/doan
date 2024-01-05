@@ -9,13 +9,13 @@
 <body>
 
 <div class="product-details">
-    <h1>{{ $product->name }}</h1>
+
     <div class="hinh-sp">
         <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
     </div>
+    <h1>{{ $product->name }}</h1>
     <p>{{ $product->description }}</p>
     <p>Price: {{ number_format($product->price) }}đ</p>
-
     <!-- Add to cart form -->
     <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
         @csrf

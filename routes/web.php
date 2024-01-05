@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::resource('/products',ProductController::class)->except(['index','show']);
+
     Route::post('logout',[LoginController::class,'logout'])->name('logout');
     //ADMIN
     Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
@@ -62,6 +63,8 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 Route::get('/', [HomeController::class, 'index']);
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
+
+
 
 
 

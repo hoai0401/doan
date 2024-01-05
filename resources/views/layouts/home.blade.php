@@ -99,7 +99,8 @@
         </div>
         <div class="others">
             <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
-            <li><a href="{{route('cart.index')}}" class="ti-shopping-cart"></a></li>
+            <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
+            </li>
         </div>
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         @guest
@@ -154,12 +155,21 @@
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
+
                     <div class="them-vao-gio-hang">
-                        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
-                            @csrf
-                            <button type="submit" class="them">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></button>
-                        </form>
-</div>
+                        @auth
+                            <a class="them" href="{{ route('cart.add', ['id' => $product->id]) }}">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
+                        @else
+                            <a class="them" href="#" onclick="redirectToLogin()">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
+                        @endauth
+                    </div>
+
+                    <script>
+                        function redirectToLogin() {
+                            window.location.href = "{{ route('login') }}";
+                        }
+                    </script>
+
 
                 </a>
             </div>
@@ -167,7 +177,7 @@
     </div>
 <br>
 
-   
+
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">

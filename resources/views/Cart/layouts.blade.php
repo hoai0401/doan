@@ -17,7 +17,7 @@
 <body>
     <!--------------------------------head------------------------------->
     <header>
-    
+
         <div class="logo">
             <svg viewBox="0 0 800 300">
             <symbol id="s-text">
