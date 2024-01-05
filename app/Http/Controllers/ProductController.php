@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Color;
+use App\Models\Size;
+
+
 
 class ProductController extends Controller
 {
@@ -24,12 +29,10 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
+        $colors = Color::all();
+        $sizes = Size::all();
         $this->fixImage($product);
-        return view('products/product-show',  ['product'=>$product]);
-<<<<<<< HEAD
-        
-=======
->>>>>>> bdeaa686fdde0c80315692b7b3300e3fcdc50ba6
+        return view('products/product-show',compact('product', 'colors', 'sizes'),  ['product'=>$product]);
     }
 
     public function index()
@@ -120,5 +123,15 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        // Tìm kiếm sản phẩm theo tên
+        $products = Product::where('name', 'like', "%{$searchTerm}%")->get();
+
+        return view('search', ['products' => $products, 'searchTerm' => $searchTerm]);
     }
 }

@@ -99,7 +99,11 @@
             <li><a href="">THÔNG TIN</a></li>
         </div>
         <div class="others">
-            <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
+            <li><form action="{{ route('products.search') }}" method="GET">
+                <input type="text" name="search" placeholder="Tìm kiếm...">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </li>
             <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
             </li>
         </div>
@@ -155,7 +159,7 @@
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
-<<<<<<< HEAD
+
 
                     <div class="them-vao-gio-hang">
                         @auth
@@ -170,16 +174,12 @@
                             window.location.href = "{{ route('login') }}";
                         }
                     </script>
-
-
-=======
->>>>>>> bdeaa686fdde0c80315692b7b3300e3fcdc50ba6
                 </a>
             </div>
         @endforeach
 
         <!-- Hiển thị nút chuyển trang -->
-       
+
     </div>
     <div class="custom-pagination" style="margin-top: 20px;">
             @if ($lst->currentPage() > 1)
