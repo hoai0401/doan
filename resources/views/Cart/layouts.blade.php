@@ -18,18 +18,24 @@
     <!--------------------------------head------------------------------->
     <header>
 
+
         <div class="logo">
             <svg viewBox="0 0 800 300">
+
+
+    <div class="logo">
+        <a href="{{ url('/') }}">
+        <svg viewBox="0 0 800 300">
             <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="50%"
-                dy=".35em">Shop HTT</text>
+                <text text-anchor="middle" x="50%" y="50%" dy=".35em">Shop HTT</text>
             </symbol>
             <use class="text" xlink:href="#s-text"></use>
             <use class="text" xlink:href="#s-text"></use>
             <use class="text" xlink:href="#s-text"></use>
             <use class="text" xlink:href="#s-text"></use>
-            </svg>
-            <img src="{{ asset('img/logo-4.png') }}" alt="">
+        </svg>
+        <img src="{{ asset('img/logo-4.png') }}" alt="">
+    </a>
         </div>
 
         <div class="menu">
