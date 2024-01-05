@@ -24,15 +24,16 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-
         $this->fixImage($product);
         return view('products/product-show',  ['product'=>$product]);
+<<<<<<< HEAD
         
+=======
+>>>>>>> bdeaa686fdde0c80315692b7b3300e3fcdc50ba6
     }
 
     public function index()
     {
-
         $lst = Product::orderBy('id', 'desc')->get();
         foreach($lst as $p){
             $this->fixImage($p);

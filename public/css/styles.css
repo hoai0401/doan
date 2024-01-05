@@ -1174,4 +1174,25 @@ footer {
     text-overflow: unset;
     max-width: unset;
 }
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-pagination a {
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-pagination a:hover,
+.custom-pagination a.active {
+    background-color: #e44d26; /* Màu nền khi hover hoặc trang đang được chọn - thay đổi theo ý muốn */
+    color: #fff;
+}
 

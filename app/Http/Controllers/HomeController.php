@@ -23,7 +23,11 @@ class HomeController extends Controller
     public function index()
     {
         // Lấy dữ liệu sản phẩm từ cơ sở dữ liệu
-        $lst = Product::all();
+       
+
+    
+        
+        $lst = Product::orderBy('id', 'desc')->paginate(25);
         foreach($lst as $p)
         {
             $this -> fixImage($p);

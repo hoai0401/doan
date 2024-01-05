@@ -58,13 +58,13 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-
-
-
 Route::get('/', [HomeController::class, 'index']);
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> bdeaa686fdde0c80315692b7b3300e3fcdc50ba6

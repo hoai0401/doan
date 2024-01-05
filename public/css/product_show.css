@@ -14,8 +14,13 @@
   }
 
   .hinh {
+<<<<<<< HEAD
 
     height: 200px;
+=======
+    width:200px;
+    height: auto;
+>>>>>>> bdeaa686fdde0c80315692b7b3300e3fcdc50ba6
   }
 
   .product-details p {
