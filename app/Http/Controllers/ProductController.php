@@ -131,7 +131,9 @@ class ProductController extends Controller
 
         // Tìm kiếm sản phẩm theo tên
         $products = Product::where('name', 'like', "%{$searchTerm}%")->get();
+        $lst = Product::paginate(5);
 
-        return view('search', ['products' => $products, 'searchTerm' => $searchTerm]);
+
+        return view('search', ['products' => $products, 'searchTerm' => $searchTerm,'lst'=>$lst]);
     }
 }
