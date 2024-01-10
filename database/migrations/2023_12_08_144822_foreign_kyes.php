@@ -11,6 +11,7 @@ return new class extends Migration
         // products
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories');
+
         });
 
         // comments
@@ -34,14 +35,17 @@ return new class extends Migration
         Schema::table('product_details', function (Blueprint $table) {
             $table->foreign('size_id')->references('id')->on('sizes');
             $table->foreign('color_id')->references('id')->on('colors');
-            $table->foreign('product_id')->references('id')->on('products');
         });
 
         // carts
         Schema::table('carts', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('product_details');
         });
+        Schema::table('images', function (Blueprint $table) {
+            $table->foreignId('product_id')->constrained('products');
+            
+         });
     }
     public function down()
     {

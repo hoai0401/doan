@@ -12,8 +12,7 @@ class Product extends Model
     use SoftDeletes;
 
     protected $guarded = [];
-    protected $fillable=[''];
-
+    protected $fillable = ['name', 'description', 'price', 'stock_quantity', 'category_id', 'image'];
     public function category()
     {
         return $this->belongsTo(Category::class);

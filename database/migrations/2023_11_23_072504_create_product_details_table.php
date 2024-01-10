@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
             $table->string('price');
             $table->integer('stock_quantity');
-            $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('size_id');
             $table->unsignedBigInteger('color_id');
             $table->string('image',255);

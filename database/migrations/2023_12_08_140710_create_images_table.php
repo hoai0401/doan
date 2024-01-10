@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('image_url');
             $table->timestamps();
             $table->softDeletes();  
-            $table->unsignedBigInteger('product_id')->nullable()->default(null);
+            // $table->unsignedBigInteger('product_id')->nullable()->default(null);
         });
     }
     public function down()

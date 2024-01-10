@@ -35,39 +35,43 @@
         </div>
 
         <div class="menu">
-            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo</a>
+            <li><a href="">Áo</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
+                    <li><a href="{{ route('categories.show', ['id' => 1]) }}">Áo Polo</a></li>
+                    <li><a href="{{ route('categories.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                    <li><a href="{{ route('categories.show', ['id' => 5]) }}">Áo Thun</a></li>
                 </ul>
             </li>
             <li><a href="">QUẦN</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
+                    <li><a href="{{ route('categories.show', ['id' => 3]) }}">Quần Jean</a></li>
+                    <li><a href="{{ route('categories.show', ['id' => 4]) }}">Quần Tây</a></li>
                 </ul>
             </li>
             <li><a  href="">BỘ SƯU TẬP</a>
                 <ul class="sub-menu">
                     <li><a href="">Áo</a>
                         <ul>
-                            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
+                            <li><a href="{{ route('categories.show', ['id' => 1]) }}">Áo Polo</a></li>
+                            <li><a href="{{ route('categories.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                            <li><a href="{{ route('categories.show', ['id' => 5]) }}">Áo Thun</a></li>
                         </ul>
                     </li>
 
                     <li><a href="">Quần</a>
                         <ul>
-                            <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
+                            <li><a href="{{ route('categories.show', ['id' => 3]) }}">Quần Jean</a></li>
+                            <li><a href="{{ route('categories.show', ['id' => 4]) }}">Quần Tây</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li><a href="">LIFESTYLE</a></li>
-            <li><a href="">THÔNG TIN</a></li>
+            @auth
+            @if(Auth::user()->is_admin)
+                <li><a href="{{ route('dashboard') }}">Admin</a></li>
+            @endif
+            @endauth
         </div>
         <div class="others">
             <li><form action="{{ route('products.search') }}" method="GET">
@@ -150,8 +154,20 @@
         @endforeach
 
         <!-- Hiển thị nút chuyển trang -->
+        </div>
+        <div class="custom-pagination" style="margin-top: 20px;">
+                @if ($lst->currentPage() > 1)
+                    <a href="{{ $lst->previousPageUrl() }}">Previous</a>
+                @endif
 
-    </div>
+                @for ($i = 1; $i <= $lst->lastPage(); $i++)
+                    <a href="{{ $lst->url($i) }}" class="{{ ($i == $lst->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
+                @endfor
+
+                @if ($lst->currentPage() < $lst->lastPage())
+                    <a href="{{ $lst->nextPageUrl() }}">Next</a>
+                @endif
+            </div>
 </div>
 
 <br>

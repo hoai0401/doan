@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -55,29 +54,7 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')->with('success', 'Loại sản phẩm đã được cập nhật thành công.');
     }
-    public function show($id)
-    {
-        $category = Category::findOrFail($id);
-        $products = $category->products;
-
-        // Iterate through each product and fix the image
-        foreach ($products as $product) {
-            $this->fixImage($product);
-        }
-
-        return view('User.show', compact('category', 'products'));
-    }
-
-    protected function fixImage(Product $p)
-    {
-        if($p->image && Storage::disk('public')->exists($p->image)){
-            $p->image = Storage::url($p->image);
-        }
-        else
-        {
-            $p->image='/image/no_image_placeholder.png';
-        }
-    }
+    
     public function destroy(Category $category)
     {
         $category->delete();

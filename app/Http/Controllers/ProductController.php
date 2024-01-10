@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Color;
 use App\Models\Image;
 use App\Models\Product;
-use Illuminate\Support\Facades\Storage;
-use App\Models\Color;
 use App\Models\Size;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -29,6 +26,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
+       
         $colors = Color::all();
         $sizes = Size::all();
         $this->fixImage($product);
@@ -123,19 +121,5 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
-    }
-
-    public function search(Request $request)
-    {
-        $searchTerm = $request->input('search');
-
-
-        $products = Product::where('name', 'like', "%{$searchTerm}%")->paginate(20);
-        foreach($products as $p)
-        {
-            $this -> fixImage($p);
-        }
-       return view('search', ['products' => $products, 'searchTerm' => $searchTerm]);
-
     }
 }

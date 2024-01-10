@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
-//
+
+
 class HomeController extends Controller
 {
     protected function fixImage(Product $p)
@@ -31,5 +32,18 @@ class HomeController extends Controller
         }
         return view('layouts.home',['lst'=>$lst]);
     }
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        $products = $category->products;
+
+        // Iterate through each product and fix the image
+        foreach ($products as $product) {
+            $this->fixImage($product);
+        }
+
+        return view('User.show', compact('category', 'products'));
+    }
+
 }
 
