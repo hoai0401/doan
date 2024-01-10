@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::resource('/products',ProductController::class)->except(['index','show']);
+
     Route::post('logout',[LoginController::class,'logout'])->name('logout');
     //ADMIN
     Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function(){
 });
 //loại sản phẩm
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('User.show');
+
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
@@ -59,3 +62,4 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/', [HomeController::class, 'index']);
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
+Route::get('/search', [ProductController::class, 'search'])->name('products.search');

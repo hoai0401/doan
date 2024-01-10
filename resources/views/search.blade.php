@@ -11,19 +11,16 @@
     <link rel="stylesheet" href="{{ asset('css/section.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-bJBEYRxpqUdZLJfYNt2yrTjJcMOh9vwlGgfcq2/oRPa7Rm81RcB2RQCIhU2f6a8a" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="{{ asset('js/js.js') }}" defer></script>
 
 </head>
+
 <body>
-    <!--------------------------------head------------------------------->
+
     <header>
 
-
         <div class="logo">
-            <svg viewBox="0 0 800 300">
-
-
-    <div class="logo">
         <a href="{{ url('/') }}">
         <svg viewBox="0 0 800 300">
             <symbol id="s-text">
@@ -103,10 +100,15 @@
             <li><a href="">LIFESTYLE</a></li>
             <li><a href="">THÔNG TIN</a></li>
         </div>
-            <div class="others">
-            <li><input placeholder="&ensp; Tìm kiếm..." type="text"></li>
-                    <li><a href="" class="ti-headphone"></a></li>
-                    <li><a href="" class="ti-shopping-cart"></a></li>
+        <div class="others">
+            <li><form action="{{ route('products.search') }}" method="GET">
+                <input type="text" name="search" placeholder="Tìm kiếm...">
+                <button class="timkiem" type="submit">Tìm kiếm</button>
+            </form>
+        </li>
+            <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
+            </li>
+        </div>
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         @guest
                             <li><a href="{{ route('login') }}" class="ti-user">Đăng nhập</a></li>
@@ -133,7 +135,9 @@
     </div>
 
     </header>
-    <section id="slider">
+
+    </div>
+        <section id="slider">
         <div class="slider-container">
             <img src="{{ asset('img/slide1.jpg') }}" alt="">
             <img src="{{ asset('img/slide2.jpg') }}" alt="">
@@ -144,16 +148,65 @@
         </div>
     </section>
 <br>
-<div class="khung-chua-san-pham">
-                <!--Phần section 1-->
-                <div class="section">
-                    <!--Thanh tiêu đề-->
-                    <p class="section-head">Thông tin giỏ hàng</p>
-    @section('header')
-    @show
-    @yield('content')
+<div id="myTable" class="khung-chua-san-pham">
+    <div class="section">
+
+        <h2 class="section-head" >Kết quả tìm kiếm cho "{{ $searchTerm }}"</h2>
+
+        @if(count($products) > 0)
+            <div class="product-list">
+                @foreach($products as $product)
+                    <div class="product-box">
+                        <a class="box" href="{{ route('products.show', ['product' => $product]) }}">
+                            <div class="hinh-sp">
+                                <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
+                            </div>
+                            <p class="ten-sp">{{ $product->name }}</p>
+                            <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
+
+                            <div class="them-vao-gio-hang">
+                                @auth
+                                    <a class="them" href="{{ route('cart.add', ['id' => $product->id]) }}">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
+                                @else
+                                    <a class="them" href="#" onclick="redirectToLogin()">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
+                                @endauth
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+                </div>
+
+            </div>
+            <div class="custom-pagination" style="margin-top: 20px;">
+                @if ($products->currentPage() > 1)
+                    <a href="{{ $products->appends(['search' => $searchTerm])->previousPageUrl() }}">Previous</a>
+                @endif
+
+                @for ($i = 1; $i <= $products->lastPage(); $i++)
+                    <a href="{{ $products->appends(['search' => $searchTerm])->url($i) }}" class="{{ ($i == $products->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
+                @endfor
+
+                @if ($products->currentPage() < $products->lastPage())
+                    <a href="{{ $products->appends(['search' => $searchTerm])->nextPageUrl() }}">Next</a>
+                @endif
+            </div>
+        </div>
     <br>
-     <footer>
+    @else
+    <p>Không có kết quả tìm kiếm.</p>
+@endif
+    <section class="contact-container">
+        <p>Tải ứng dụng</p>
+        <div class="app-google">
+            <img src="{{ asset('img/ios-download2.png') }}" >
+            <img src="{{ asset('img/google-download.png') }}" >
+        </div>
+        <p>Nhận bản tin</p>
+        <input type="text" placeholder="Nhập email của bạn...">
+    </section>
+
+    <!--------------------------------foot------------------------------->
+    <footer>
         <div class="footer-top">
             <li><a href=""></a>Liên hệ</li>
             <li><a href=""></a>Tuyển dụng</li>
@@ -169,8 +222,9 @@
             ©Makima All rights reverved
         </div>
     </footer>
-    </body>
+</div>
 
+</body>
 <script>
     const imgPosition = document.querySelectorAll(".slider-container img")
     const imgContainer = document.querySelector(".slider-container")

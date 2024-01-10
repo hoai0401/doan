@@ -22,8 +22,9 @@ class HomeController extends Controller
     }
     public function index()
     {
-        
         $lst = Product::orderBy('id', 'desc')->paginate(25);
+        $lst = Product::orderBy('id', 'desc')->paginate(20);
+
         foreach($lst as $p)
         {
             $this -> fixImage($p);

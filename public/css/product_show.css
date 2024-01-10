@@ -1,35 +1,87 @@
+/* product_show.css */
+
 .product-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 800px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* Center the product details section */
+  }
+
+  .product-details:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 
   .hinh-sp {
-    flex: 1;
-    margin-right: 20px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .hinh {
-    width:200px;
-    height: auto;
+    max-width: 100%;
+    height: auto; /* Allow the image to maintain its aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
   }
 
-  .product-details p {
-    margin-bottom: 10px;
+  .hinh:hover {
+    transform: scale(1.05);
+  }
+
+  .color-options, .size-options, .quantity-options {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block; /* Ensures proper alignment for the labels */
+    margin-bottom: 5px;
+  }
+
+  select, input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Make the select and input elements full width */
+    margin-top: 5px;
+  }
+
+  .quantity-control {
+    display: flex; /* Align quantity controls in a row */
+    align-items: center;
   }
 
   button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
     cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: background-color 0.4s;
   }
 
   button:hover {
+    background-color: #f0f0f0;
+  }
+
+  button[type="submit"] {
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    transition: background-color 0.4s;
+    margin-right: 10px;
+  }
+
+  button[type="submit"]:hover {
     background-color: #45a049;
   }
+
+
+.Gia{
+    font-weight: bold;
+    color:red;
+}
