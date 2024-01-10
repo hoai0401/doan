@@ -30,79 +30,49 @@
             <use class="text" xlink:href="#s-text"></use>
             <use class="text" xlink:href="#s-text"></use>
         </svg>
-        <img src="{{ asset('img/logo-4.png') }}" alt="">
+
     </a>
         </div>
 
         <div class="menu">
-            <li><a href="">NỮ</a>
+            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo</a>
                 <ul class="sub-menu">
-                    <li><a href="">Hàng mới về</a></li>
+                    <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
+                    <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                    <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
+                </ul>
+            </li>
+            <li><a href="">QUẦN</a>
+                <ul class="sub-menu">
+                    <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
+                    <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
+                </ul>
+            </li>
+            <li><a  href="">BỘ SƯU TẬP</a>
+                <ul class="sub-menu">
                     <li><a href="">Áo</a>
                         <ul>
-                            <li><a href="">Áo thun</a></li>
-                            <li><a href="">Áo sơ mi</a></li>
-                            <li><a href="">Áo khoác</a></li>
+                            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
+                            <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                            <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
                         </ul>
                     </li>
 
                     <li><a href="">Quần</a>
                         <ul>
-                            <li><a href="">Quần jeans</a></li>
-                            <li><a href="">Quần dài</a></li>
-                            <li><a href="">Quần lửng/short</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </li>
-
-            <li><a href="">NAM</a>
-                <ul class="sub-menu">
-                    <li><a href="">Hàng mới về</a></li>
-                    <li><a href="">Áo</a>
-                        <ul>
-                            <li><a href="">Áo thun</a></li>
-                            <li><a href="">Áo sơ mi</a></li>
-                            <li><a href="">Áo khoác</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="">Quần</a>
-                        <ul>
-                            <li><a href="">Quần jeans</a></li>
-                            <li><a href="">Quần dài</a></li>
-                            <li><a href="">Quần lửng/short</a></li>
+                            <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
+                            <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li><a style="color: red;" href="">SALE</a>
-                <ul class="sub-menu">
-                    <li><a href="">Áo dạ lông</a></li>
-                    <li><a href="">Nữ</a>
-                        <ul>
-                            <li><a href="">Sale 30%</a></li>
-                            <li><a href="">Sale 50%</a></li>
-                            <li><a style="color: red;" href="">Mua nhiều giảm sâu từ 199k</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="">Nam</a>
-                        <ul>
-                            <li><a href="">Sale 50%</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="">BỘ SƯU TẬP</a></li>
             <li><a href="">LIFESTYLE</a></li>
             <li><a href="">THÔNG TIN</a></li>
         </div>
         <div class="others">
             <li><form action="{{ route('products.search') }}" method="GET">
                 <input type="text" name="search" placeholder="Tìm kiếm...">
-                <button type="submit">Tìm kiếm</button>
+                <button class="timkiem" type="submit">Tìm kiếm</button>
             </form>
         </li>
             <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
@@ -147,9 +117,9 @@
         </div>
     </section>
 <br>
-<div id="myTable" class="khung-chua-san-pham">
-    <!-- Phần sản phẩm nổi bật -->
-    <div class="section">
+    <div id="myTable" class="khung-chua-san-pham">
+        <!-- Phần sản phẩm nổi bật -->
+        <div class="section">
         <p class="section-head">SẢN PHẨM NỔI BẬT</p>
         @foreach ($lst as $product)
             <div class="product-box">
@@ -182,33 +152,45 @@
         <!-- Hiển thị nút chuyển trang -->
 
     </div>
-    <div class="custom-pagination" style="margin-top: 20px;">
-            @if ($lst->currentPage() > 1)
-                <a href="{{ $lst->previousPageUrl() }}">Previous</a>
-            @endif
-
-            @for ($i = 1; $i <= $lst->lastPage(); $i++)
-                <a href="{{ $lst->url($i) }}" class="{{ ($i == $lst->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
-            @endfor
-
-            @if ($lst->currentPage() < $lst->lastPage())
-                <a href="{{ $lst->nextPageUrl() }}">Next</a>
-            @endif
-        </div>
 </div>
 
 <br>
 
 
-    <section class="contact-container">
-        <p>Tải ứng dụng</p>
-        <div class="app-google">
-            <img src="{{ asset('img/ios-download2.png') }}" >
-            <img src="{{ asset('img/google-download.png') }}" >
-        </div>
-        <p>Nhận bản tin</p>
-        <input type="text" placeholder="Nhập email của bạn...">
-    </section>
+<section class="contact-container">
+    <p>Tải ứng dụng</p>
+    <div class="app-google">
+        <img src="{{ asset('img/ios-download2.png') }}">
+        <img src="{{ asset('img/google-download.png') }}">
+    </div>
+    <p>Nhận bản tin</p>
+    <input type="text" id="emailInput" placeholder="Nhập email của bạn..." onkeypress="handleKeyPress(event)">
+    <div id="confirmationMessage" style="display: none;">Cảm ơn bạn đã đăng ký!</div>
+</section>
+
+<script>
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            showConfirmationMessage();
+        }
+    }
+
+    function showConfirmationMessage() {
+        var emailInput = document.getElementById("emailInput");
+        var confirmationMessage = document.getElementById("confirmationMessage");
+
+        // Check if the email input is not empty
+        if (emailInput.value.trim() !== "") {
+            // Hide the email input
+            emailInput.style.display = "none";
+
+            // Show the confirmation message
+            confirmationMessage.style.display = "block";
+        }
+    }
+</script>
+
 
     <!--------------------------------foot------------------------------->
     <footer>
@@ -230,5 +212,45 @@
 
 
 </body>
+<script>
+    const imgPosition = document.querySelectorAll(".slider-container img")
+    const imgContainer = document.querySelector(".slider-container")
+    const dotItem = document.querySelectorAll(".dot")
+    let imgSlider = imgPosition.length
+    let index = 0
+    // console.log(imgPosition)
+    imgPosition.forEach(function(image, index){
+        image.style.left = index*100 + "%"
+        dotItem[index].addEventListener("click", function(){
+            slider(index)
+        })
+    })
+    function imgSlide(){
+        index++;
+        if(index >= imgSlider){
+            index = 0
+        }
+        slider(index)
 
+    }
+
+    function slider(index){
+        imgContainer.style.left = "-" +index*100+ "%"
+        const dotActive = document.querySelector(".active")
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+
+    setInterval(imgSlide, 5000)
+    document.querySelector('.user-panel').addEventListener('mouseover', function () {
+        // Show the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'block';
+    });
+
+    document.querySelector('.user-panel').addEventListener('mouseout', function () {
+        // Hide the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'none';
+    });
+
+</script>
 </html>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết quả tìm kiếm - Shop Quần Áo</title>
-    <!-- Thêm các đường dẫn đến các file CSS hoặc thư viện khác nếu cần -->
+    <title>Shop Quần Áo</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css' )}}">
     <link rel="stylesheet" href="{{ asset('css/product-box.css' )}}">
@@ -15,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src="{{ asset('js/js.js') }}" defer></script>
+
 </head>
 
 <body>
@@ -104,7 +103,7 @@
         <div class="others">
             <li><form action="{{ route('products.search') }}" method="GET">
                 <input type="text" name="search" placeholder="Tìm kiếm...">
-                <button type="submit">Tìm kiếm</button>
+                <button class="timkiem" type="submit">Tìm kiếm</button>
             </form>
         </li>
             <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
@@ -136,9 +135,23 @@
     </div>
 
     </header>
+
+    </div>
+        <section id="slider">
+        <div class="slider-container">
+            <img src="{{ asset('img/slide1.jpg') }}" alt="">
+            <img src="{{ asset('img/slide2.jpg') }}" alt="">
+        </div>
+        <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+<br>
 <div id="myTable" class="khung-chua-san-pham">
-    <main>
-        <h2>Kết quả tìm kiếm cho "{{ $searchTerm }}"</h2>
+    <div class="section">
+
+        <h2 class="section-head" >Kết quả tìm kiếm cho "{{ $searchTerm }}"</h2>
 
         @if(count($products) > 0)
             <div class="product-list">
@@ -161,29 +174,27 @@
                         </a>
                     </div>
                 @endforeach
+                </div>
+
             </div>
-        @else
-            <p>Không có kết quả tìm kiếm.</p>
-        @endif
-    </main>
+            <div class="custom-pagination" style="margin-top: 20px;">
+                @if ($products->currentPage() > 1)
+                    <a href="{{ $products->appends(['search' => $searchTerm])->previousPageUrl() }}">Previous</a>
+                @endif
 
-</div>
-    <div class="custom-pagination" style="margin-top: 20px;">
-        @if ($lst->currentPage() > 1)
-            <a href="{{ $lst->previousPageUrl() }}">Previous</a>
-        @endif
+                @for ($i = 1; $i <= $products->lastPage(); $i++)
+                    <a href="{{ $products->appends(['search' => $searchTerm])->url($i) }}" class="{{ ($i == $products->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
+                @endfor
 
-        @for ($i = 1; $i <= $lst->lastPage(); $i++)
-            <a href="{{ $lst->url($i) }}" class="{{ ($i == $lst->currentPage()) ? 'active' : '' }}">{{ $i }}</a>
-        @endfor
-
-        @if ($lst->currentPage() < $lst->lastPage())
-            <a href="{{ $lst->nextPageUrl() }}">Next</a>
-        @endif
-    </div>
+                @if ($products->currentPage() < $products->lastPage())
+                    <a href="{{ $products->appends(['search' => $searchTerm])->nextPageUrl() }}">Next</a>
+                @endif
+            </div>
+        </div>
     <br>
-
-
+    @else
+    <p>Không có kết quả tìm kiếm.</p>
+@endif
     <section class="contact-container">
         <p>Tải ứng dụng</p>
         <div class="app-google">
@@ -211,8 +222,48 @@
             ©Makima All rights reverved
         </div>
     </footer>
-
+</div>
 
 </body>
+<script>
+    const imgPosition = document.querySelectorAll(".slider-container img")
+    const imgContainer = document.querySelector(".slider-container")
+    const dotItem = document.querySelectorAll(".dot")
+    let imgSlider = imgPosition.length
+    let index = 0
+    // console.log(imgPosition)
+    imgPosition.forEach(function(image, index){
+        image.style.left = index*100 + "%"
+        dotItem[index].addEventListener("click", function(){
+            slider(index)
+        })
+    })
+    function imgSlide(){
+        index++;
+        if(index >= imgSlider){
+            index = 0
+        }
+        slider(index)
 
+    }
+
+    function slider(index){
+        imgContainer.style.left = "-" +index*100+ "%"
+        const dotActive = document.querySelector(".active")
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+
+    setInterval(imgSlide, 5000)
+    document.querySelector('.user-panel').addEventListener('mouseover', function () {
+        // Show the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'block';
+    });
+
+    document.querySelector('.user-panel').addEventListener('mouseout', function () {
+        // Hide the dropdown content
+        document.querySelector('.dropdown-content').style.display = 'none';
+    });
+
+</script>
 </html>
