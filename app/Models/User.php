@@ -26,8 +26,6 @@ class User extends Authenticatable
 
     public function setEmailVerifiedAtAttribute($value)
     {
-        // Sử dụng thời điểm hiện tại nếu $value là true
-        // Sử dụng null nếu $value là false
         $this->attributes['email_verified_at'] = $value ? now() : null;
     }
 
@@ -39,4 +37,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; 
+    }
 }

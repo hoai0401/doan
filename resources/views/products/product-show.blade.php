@@ -17,7 +17,6 @@
         <h2>Mô tả sản phẩm:</h2>
         <p>{{ $product->description }}</p>
 
-
         <div class="color-options">
             <label for="color">Color:</label>
             <select id="color" name="color">
@@ -36,18 +35,34 @@
             </select>
         </div>
 
-
         <!-- Quantity and Add to Cart form -->
-
-
 
         <!-- Add to cart form -->
         <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
             @csrf
             <button type="submit" name="action" value="buynow">Mua ngay</button>
         </form>
-    </div>
+    
+     <!-- Comment section -->
+     <div class="comment-section">
+            <h2>Bình luận:</h2>
 
+            <!-- Form comment mới -->
+            @if(Auth::check())
+                
+                <form action="{{ route('comment.store', ['id' => $product->id]) }}" method="post">
+                    @csrf
+                    <textarea name="content" placeholder="Thêm bình luận"></textarea>
+                    <button type="submit">Đăng Bài</button>
+                </form>
+            @else
+                    
+            @endif
+           
+           
 
+            <li><a href="{{ route('comments.show', ['id' => $product->id]) }}">Danh sách comment</a></li>
+     </div>
+</div>
 </body>
 </html>

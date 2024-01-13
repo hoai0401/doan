@@ -11,13 +11,11 @@ return new class extends Migration
         // products
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories');
-
         });
 
         // comments
         Schema::table('comments', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('commennt_id')->references('id')->on('comments');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         // invoices

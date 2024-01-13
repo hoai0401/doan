@@ -8,12 +8,12 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table->id();
             $table->text('content');
             $table->date('review_day');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('comment_id');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -21,6 +21,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('replies_');
     }
 };

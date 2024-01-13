@@ -70,6 +70,12 @@
                           <p>Dannh mục sản phẩm</p>
                         </a>
                       </li>
+                      <!-- <li class="nav-item">
+                      <a href="" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Thêm Image</p>
+                        </a>
+                      </li> -->
                     </ul>
                   </li>
                   <li class="nav-item">

@@ -125,7 +125,7 @@
                 <!--Phần section 1-->
                 <div class="section">
                     <!--Thanh tiêu đề-->
-                    <p class="section-head">Thông Tin</p>
+                    <p class="section-head">Danh Sách Comments Của {{ $product->name }} </p>
     @section('header')
     @show
     @yield('content')

@@ -85,3 +85,98 @@
     font-weight: bold;
     color:red;
 }
+
+
+form {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 94%;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: vertical; /* Cho phép chỉnh kích thước theo chiều dọc */
+}
+
+button {
+  background-color: #3498db; /* Màu nền */
+  color: #fff; /* Màu chữ */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9; /* Màu nền khi hover */
+}
+/* commert */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.product-details {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hinh-sp img {
+  max-width: 100%;
+  height: auto;
+}
+
+.color-options,
+.size-options {
+  margin-top: 15px;
+}
+
+.color-options label,
+.size-options label {
+  font-weight: bold;
+}
+
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.comment p {
+  margin: 0 0 10px 0;
+}
+
+.reply-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.reply-list li {
+  background-color: #eaeaea;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
