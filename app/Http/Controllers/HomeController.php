@@ -44,6 +44,7 @@ class HomeController extends Controller
 
         return view('User.show', compact('category', 'products'));
     }
+    
 
 }
 

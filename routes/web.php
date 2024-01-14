@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\SlideshowController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
@@ -65,6 +66,7 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/', [HomeController::class, 'index']);
+
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 
@@ -76,3 +78,8 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 Route::get('/products/{id}/comment', [CommentController::class, 'showcomment'])->name('comments.show');
 Route::post('/products/{id}/comment', [CommentController::class, 'storecomment'])->name('comment.store');
 Route::post('/comments/{id}/reply', [CommentController::class, 'replycoment'])->name('comment.reply');
+
+//slideshows
+Route::get('/slideshows', [SlideshowController::class, 'index'])->name('slideshows.index');
+Route::get('/slideshows/create', [SlideshowController::class, 'create'])->name('slideshows.create');
+Route::post('/slideshows/store', [SlideshowController::class, 'store'])->name('slideshows.store');

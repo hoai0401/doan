@@ -9,6 +9,7 @@ use App\Models\Color;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Size;
+use App\Models\Slideshow;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -23,7 +24,7 @@ class ProductController extends Controller
             $p->image='/image/no_image_placeholder.png';
         }
     }
-
+   
     public function show(Product $product)
     {
        
