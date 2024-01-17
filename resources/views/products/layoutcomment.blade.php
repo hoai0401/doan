@@ -112,8 +112,10 @@
     </header>
     <section id="slider">
         <div class="slider-container">
-            <img src="{{ asset('img/slide1.jpg') }}" alt="">
-            <img src="{{ asset('img/slide2.jpg') }}" alt="">
+            @foreach ( $slideshows as $slideshow )
+                <img src="{{ $slideshow->image }}" alt="slide"> 
+               
+            @endforeach
         </div>
         <div class="dot-container">
             <div class="dot active"></div>

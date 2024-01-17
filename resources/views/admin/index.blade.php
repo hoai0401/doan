@@ -120,21 +120,26 @@
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-comments"></i>
+                      <i class="nav-icon fas fa-th"></i>
                       <p>
-                        Quản lý Bình Luận
+                      Slideshows
                         <i class="fas fa-angle-left right"></i>
                       </p>
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-images"></i>
-                      <p>
-                        Quản lý Slideshow
-                        <i class="fas fa-angle-left right"></i>
-                      </p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                      <a href="{{ route('slideshows.create') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Thêm slideshows</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                      <a href="{{ route('slideshows.index') }}"class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Danh slideshows</p>
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">

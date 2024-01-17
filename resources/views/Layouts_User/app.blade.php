@@ -110,16 +110,10 @@
     </div>
 
     </header>
-    <section id="slider">
-        <div class="slider-container">
-            <img src="{{ asset('img/slide1.jpg') }}" alt="">
-            <img src="{{ asset('img/slide2.jpg') }}" alt="">
-        </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-        </div>
-    </section>
+    
+<br>
+<br>
+<br>
 <br>
 <div id="myTable" class="khung-chua-san-pham">
                 <!--Phần section 1-->
