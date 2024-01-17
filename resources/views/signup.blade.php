@@ -54,7 +54,7 @@
                 <p>Đăng ký thành công!</p>
                 </div>
             </div>
-            
+             
           <form class="login-form">
             <a href="{{ route('login') }}"><button type="button">LOGIN</button></a>
           </form>
