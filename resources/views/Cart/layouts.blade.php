@@ -17,12 +17,6 @@
 <body>
     <!--------------------------------head------------------------------->
     <header>
-
-
-        <div class="logo">
-            <svg viewBox="0 0 800 300">
-
-
     <div class="logo">
         <a href="{{ url('/') }}">
         <svg viewBox="0 0 800 300">
@@ -147,8 +141,6 @@
 <div class="khung-chua-san-pham">
                 <!--Phần section 1-->
                 <div class="section">
-                    <!--Thanh tiêu đề-->
-                    <p class="section-head">Thông tin giỏ hàng</p>
     @section('header')
     @show
     @yield('content')

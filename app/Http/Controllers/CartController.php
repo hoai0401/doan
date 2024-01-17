@@ -7,15 +7,15 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
-    public function addcart($productId, $quantity)
+    public function addcart($productId, $size, $color)
     {
-        // Kiểm tra người dùng đã đăng nhập hay chưa
+        $quantity = 1;
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            //dd($userId,$productId,$quantity);
     
             // Kiểm tra sản phẩm đã có trong giỏ hàng của người dùng chưa
             $existingCartItem = Cart::where('user_id', $userId)
@@ -28,12 +28,15 @@ class CartController extends Controller
                 $existingCartItem->save();
             } else {
                 // Nếu sản phẩm chưa có trong giỏ hàng, tạo một mục mới
-                Cart::create([
+                DB::table('carts')->insert([
                     'user_id' => $userId,
                     'product_id' => $productId,
-                    'quantity' => $quantity
+                    'quantity' => $quantity,
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]);
             }
+            // dd($productId, $size, $color);
             return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng.');
         } else {
             return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.');
@@ -41,8 +44,60 @@ class CartController extends Controller
     }
     public function index()
     {
-        $carts = Cart::all();
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
 
-        return view('Cart.cart-index', compact('carts'));
+            $carts = DB::table('carts')
+                ->join('products', 'carts.product_id', '=', 'products.id')
+                ->select(
+                    'products.name',
+                    'products.price',
+                    'carts.quantity',
+                    'products.id',
+    
+                )
+                ->where('carts.user_id', $userId)
+                ->get();
+                // dd($carts);
+            if ($carts->isEmpty()) {
+                return view('Cart.cart-index', ['carts' => null, 'title'=>'cart'] ); // Trả về view với biến cart rỗng
+            }
+            return view('Cart.cart-index', compact('carts'), ['title'=>'cart']);
+        }
+        else{
+            // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập
+            return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để xem giỏ hàng.');
+        }
     }
+    public function checkoutshow()
+    {
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+
+            $cartProducts = DB::table('carts')
+                ->join('products', 'carts.product_id', '=', 'products.id')
+                ->select(
+                    'products.name',
+                    'products.price',
+                    'carts.quantity',
+                    'products.id',
+                    // DB::raw('(SELECT image_path FROM product_images WHERE product_images.product_id = products.id LIMIT 1) AS image_path')
+                )
+                ->where('carts.user_id', $userId)
+                ->get();
+
+            $userData = DB::table('users')
+                ->select('id','name', 'email','phone')
+                ->where('id', $userId)
+                ->get();
+                session(['productsData' => $cartProducts]);
+                session(['user' => $userData]);
+            return view('cart.checkout', compact('userData','cartProducts'));
+        }
+        else{
+            // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập
+            return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để xem giỏ hàng.');
+        }
+    }
+    
 }
