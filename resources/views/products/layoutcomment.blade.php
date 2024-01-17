@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{ asset('css/section.css' )}}">
     <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-bJBEYRxpqUdZLJfYNt2yrTjJcMOh9vwlGgfcq2/oRPa7Rm81RcB2RQCIhU2f6a8a" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="{{ asset('js/js.js') }}" defer></script>
 </head>
 <body>
     <!--------------------------------head------------------------------->
@@ -34,14 +34,14 @@
         </div>
 
         <div class="menu">
-            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo</a>
+            <li><a href="">Áo</a>
                 <ul class="sub-menu">
                     <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
                     <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
                     <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
                 </ul>
             </li>
-            <li><a href="{{ route('User.show', ['id' => 3]) }}">QUẦN</a>
+            <li><a href="">QUẦN</a>
                 <ul class="sub-menu">
                     <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
                     <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
@@ -49,7 +49,7 @@
             </li>
             <li><a  href="">BỘ SƯU TẬP</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo</a>
+                    <li><a href="">Áo</a>
                         <ul>
                             <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
                             <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
@@ -57,7 +57,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần</a>
+                    <li><a href="">Quần</a>
                         <ul>
                             <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
                             <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
@@ -65,9 +65,6 @@
                     </li>
                 </ul>
             </li>
-
-
-
             <li><a href="">LIFESTYLE</a></li>
             @auth
             @if(Auth::user()->is_admin)
