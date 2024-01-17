@@ -59,4 +59,29 @@ class CommentController extends Controller
         }
     }
 
+    public function destroycomment($commentId)
+    {
+        $comment = Comment::find($commentId);
+
+        if ($comment) {
+            // Kiểm tra xem người dùng có phải là chủ nhân của comment không
+            if (Auth::check() && Auth::user()->id == $comment->user_id || Auth::user()->is_admin) {
+                $comment->delete();
+                return redirect()->back();
+            } 
+        }
+    }
+    public function destroyreply($replyId)
+    {
+        $reply = Replie::find($replyId);
+
+        if ($reply) {
+            // Kiểm tra xem người dùng có phải là chủ nhân của reply hay là admin không
+            if (Auth::user()->id == $reply->user_id || Auth::user()->is_admin) {
+                $reply->delete();
+                return redirect()->back();
+            } 
+        }
+    }
+
 }

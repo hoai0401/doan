@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Slideshow;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -30,7 +31,10 @@ class HomeController extends Controller
         {
             $this -> fixImage($p);
         }
-        return view('layouts.home',['lst'=>$lst]);
+        return view('layouts.home',[
+            'lst'=>$lst,
+            'slideshows' => Slideshow::where('deleted_at', NULL)->get()
+        ]);
     }
     public function show($id)
     {

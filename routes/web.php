@@ -78,8 +78,11 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 Route::get('/products/{id}/comment', [CommentController::class, 'showcomment'])->name('comments.show');
 Route::post('/products/{id}/comment', [CommentController::class, 'storecomment'])->name('comment.store');
 Route::post('/comments/{id}/reply', [CommentController::class, 'replycoment'])->name('comment.reply');
+Route::delete('/comments/{commentId}/destroy', [CommentController::class, 'destroycomment'])->name('comments.destroy');
+Route::delete('/replies/{replyId}/destroy', [CommentController::class,'destroyreply'])->name('replies.destroy');
 
 //slideshows
 Route::get('/slideshows', [SlideshowController::class, 'index'])->name('slideshows.index');
 Route::get('/slideshows/create', [SlideshowController::class, 'create'])->name('slideshows.create');
 Route::post('/slideshows/store', [SlideshowController::class, 'store'])->name('slideshows.store');
+Route::delete('/slideshows/{id}', [SlideshowController::class,'destroy'])->name('slideshows.destroy');
