@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -65,10 +66,20 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/add/{productid}/{sizeid}/{colorid}', [CartController::class, 'addcart'])->name('cartadd');
 Route::get('/', [HomeController::class, 'index']);
 
 Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
+
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+
+
+//Thanh Toans
+Route::get('/checkout', [CartController::class, 'checkoutshow'])->name('checkout');
+Route::get('/order', [OrderController::class, 'CreateIncvoice'])->name('order');
+
+
+
 
 //image
 // Route::get('images/create', [ImageController::class, 'create'])->name('images.create');
@@ -78,8 +89,11 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 Route::get('/products/{id}/comment', [CommentController::class, 'showcomment'])->name('comments.show');
 Route::post('/products/{id}/comment', [CommentController::class, 'storecomment'])->name('comment.store');
 Route::post('/comments/{id}/reply', [CommentController::class, 'replycoment'])->name('comment.reply');
+Route::delete('/comments/{commentId}/destroy', [CommentController::class, 'destroycomment'])->name('comments.destroy');
+Route::delete('/replies/{replyId}/destroy', [CommentController::class,'destroyreply'])->name('replies.destroy');
 
 //slideshows
 Route::get('/slideshows', [SlideshowController::class, 'index'])->name('slideshows.index');
 Route::get('/slideshows/create', [SlideshowController::class, 'create'])->name('slideshows.create');
 Route::post('/slideshows/store', [SlideshowController::class, 'store'])->name('slideshows.store');
+Route::delete('/slideshows/{id}', [SlideshowController::class,'destroy'])->name('slideshows.destroy');

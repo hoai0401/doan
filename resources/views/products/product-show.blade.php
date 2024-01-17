@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $product->name }}</title>
     <link rel="stylesheet" href="{{ asset('css/product_show.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 <body>
 
@@ -17,30 +19,64 @@
         <h2>Mô tả sản phẩm:</h2>
         <p>{{ $product->description }}</p>
 
-        <div class="color-options">
-            <label for="color">Color:</label>
-            <select id="color" name="color">
-                @foreach($colors as $color)
-                <option value="{{ $color->name }}">{{ $color->name }}</option>
-                @endforeach
-            </select>
-        </div>
 
-        <div class="size-options">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                @foreach($sizes as $size)
-                <option value="{{ $size->name }}">{{ $size->name }}</option>
-                @endforeach
-            </select>
-        </div>
+        <?php
+        $sizeid=1;
+        $colorid=2
+        ?>
+            <div class="color-options">
+                <label for="color">Màu sắc:</label>
+                <select id="color" name="color">
+                    <?php foreach ($colors as $color): ?>
+                        <option value="<?= $color->id ?>">
+                            <?= $color->name ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
+            <div class="size-options">
+                <label for="size">Kích thước:</label>
+                <select id="size" name="size">
+                    <?php foreach ($sizes as $size): ?>
+                        <option value="<?= $size->id ?>">
+                            <?= $size->name ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <input type="hidden" id="colorid" name="colorid" value="<?= $colorid ?>">
+            <input type="hidden" id="sizeid" name="sizeid" value="<?= $sizeid ?>">
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var colorDropdown = document.getElementById('color');
+                    var sizeDropdown = document.getElementById('size');
+            
+                    var coloridInput = document.getElementById('colorid');
+                    var sizeidInput = document.getElementById('sizeid');
+            
+                    colorDropdown.addEventListener('change', function () {
+                        coloridInput.value = colorDropdown.value;
+                    });
+            
+                    sizeDropdown.addEventListener('change', function () {
+                        sizeidInput.value = sizeDropdown.value;
+                    });
+                });
+            </script>
+        
         <!-- Quantity and Add to Cart form -->
 
         <!-- Add to cart form -->
-        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="post">
+        {{-- <form action="{{ route('cart/add', ['productid' => $product->id, 'sizeid' => $sizeid, 'colorid' => $colorid]) }}" method="get"> --}}
+        {{-- <form action="{{ route('cart/add', ['productid' => $product->id, 'sizeid' => $sizeid, 'colorid' => $colorid]) }}" method="GET">
             @csrf
             <button type="submit" name="action" value="buynow">Mua ngay</button>
+        </form> --}}
+        <form action="{{ route('cartadd', ['productid' => $product->id, 'sizeid' => $sizeid, 'colorid' => $colorid]) }}" method="get">
+            @csrf
+            <button type="submit" name="action" value="buynow">Thêm giỏ hàng</button>
         </form>
     
      <!-- Comment section -->
@@ -63,6 +99,9 @@
 
             <li><a href="{{ route('comments.show', ['id' => $product->id]) }}">Danh sách comment</a></li>
      </div>
+     
+    
 </div>
 </body>
+
 </html>

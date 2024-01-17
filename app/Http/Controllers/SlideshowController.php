@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class SlideshowController extends Controller
 {
-    
-
     public function index()
     {
         $slideshows = Slideshow::all();
@@ -34,5 +32,24 @@ class SlideshowController extends Controller
         ]);
 
         return redirect()->route('slideshows.index');
+    }
+    public function destroy($id)
+    {
+        $slideshow = Slideshow::find($id);
+
+        if ($slideshow) {
+            // Xóa hình ảnh từ thư mục public/images
+            $imagePath = public_path($slideshow->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            // Xóa dữ liệu trong cơ sở dữ liệu
+            $slideshow->delete();
+
+            return redirect()->route('slideshows.index');
+        } else {
+            return redirect()->route('slideshows.index');
+        }
     }
 }
