@@ -27,7 +27,6 @@ class ProductController extends Controller
    
     public function show(Product $product)
     {
-       
         $colors = Color::all();
         $sizes = Size::all();
         $this->fixImage($product);

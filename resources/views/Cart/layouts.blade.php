@@ -113,10 +113,10 @@
     <!--------------------------------slide------------------------------->
     <section id="slider">
         <div class="slider-container">
-            @foreach ( $slideshows as $slideshow )
+            {{-- @foreach ( $slideshows as $slideshow )
                 <img src="{{ $slideshow->image }}" alt="slide"> 
                
-            @endforeach
+            @endforeach --}}
         </div>
         <div class="dot-container">
             <div class="dot active"></div>

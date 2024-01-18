@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
+    
     public function addcart($productId, $size, $color)
     {
         $quantity = 1;
@@ -37,11 +38,12 @@ class CartController extends Controller
                 ]);
             }
             // dd($productId, $size, $color);
-            return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng.');
+            return redirect('/');
         } else {
             return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.');
         }
     }
+    
     public function index()
     {
         if (Auth::check()) {
@@ -54,7 +56,7 @@ class CartController extends Controller
                     'products.price',
                     'carts.quantity',
                     'products.id',
-    
+                    DB::raw('(SELECT image_url FROM images WHERE images.product_id = products.id LIMIT 1) AS image_url')
                 )
                 ->where('carts.user_id', $userId)
                 ->get();
@@ -81,13 +83,13 @@ class CartController extends Controller
                     'products.price',
                     'carts.quantity',
                     'products.id',
-                    // DB::raw('(SELECT image_path FROM product_images WHERE product_images.product_id = products.id LIMIT 1) AS image_path')
+                    DB::raw('(SELECT image_url FROM images WHERE images.product_id = products.id LIMIT 1) AS image_url')
                 )
                 ->where('carts.user_id', $userId)
                 ->get();
 
             $userData = DB::table('users')
-                ->select('id','name', 'email','phone')
+                ->select('id','name', 'email','phone','Address')
                 ->where('id', $userId)
                 ->get();
                 session(['productsData' => $cartProducts]);

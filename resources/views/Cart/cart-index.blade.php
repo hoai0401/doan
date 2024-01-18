@@ -22,7 +22,8 @@
                     <td>{{$cart->name}}</td>
                     <td>{{ $cart->price }}</td>    
                     <td>{{ $cart->quantity }}</td>
-                    <td>{{$cart->id}}</td>
+                    {{-- <td><img src="{{$cart->image_url}}" ></td> --}}
+                    <td><img src="storage/{{$cart->image_url}}" alt="Image 1" style="max-width: 100px; max-height: 100px;"></td>
                 </tr>
                 @php
                     $totalAmount+=$cart->price*$cart->quantity;

@@ -10,6 +10,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Personal information</h4>
+                            {{-- @dd($userData) --}}
                             <div class="mb-3">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" disabled value="{{ $userData[0]->name }}"placeholder="Nhập họ và tên">
@@ -24,7 +25,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="apartment_number" class="form-label">Address</label>
-                                <input type="text" id="shipping_address" name="shipping_address" placeholder="Nhập địa chỉ nhà">
+                                <input type="text" placeholder="Nhập địa chỉ nhà" disabled value="{{ $userData[0]->Address}}">
                             </div>
                         </div>
                     </div>

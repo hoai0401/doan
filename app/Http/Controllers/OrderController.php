@@ -16,11 +16,12 @@ use DB;
 class OrderController extends Controller
 {
     public function CreateIncvoice(Request $request){
+        // dd($request);
         if (Auth::check()) {
             $userId = Auth::user()->id;
             $productData = session('productsData');
             $userData = session('user');
-            // dd($productData);
+            // dd($userData);
     
             // Tính tổng giá tiền
             $totalAmount = 0;
@@ -30,20 +31,36 @@ class OrderController extends Controller
             }
             // dd($productData);
             // Thêm vào bảng invoices
-            $invoice = Invoice::create([
+
+            $invoice=Invoice::create([
+                $request->except('_token'),
                 'user_id' => $userId,
                 'issued_date' => Carbon::now(),
-                'shipping_address' => $request->shipping_address,
+                'shipping_address'=>$userData[0]->Address,
                 'shipping_phone' => $userData[0]->phone,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => null,
             ]);
-
+            // try{
+            //     Invoice::create([
+            //         $request->except('_token'),
+            //         'user_id' => $userId,
+            //         'issued_date' => Carbon::now(),
+            //         'shipping_address'=>(string)$request->input('shipping_address'),
+            //         'shipping_phone' => $userData[0]->phone,
+            //         'status' => 1,
+            //         'created_at' => now(),
+            //         'updated_at' => null,
+            //     ]);
+            // }catch(\Exception $e)
+            // {
+            //     return redirect()->back()->withInput();
+            // }
     
             // Thêm vào bảng invoice_details
             foreach ($productData as $product) {
-                //dd($product->quantity);
+                // dd($invoice->id);
                 InvoiceDetail::create([
                     'quantity' => $product->quantity,
                     'unit_price' => $product->price,
