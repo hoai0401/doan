@@ -1,4 +1,4 @@
-@extends('Cart.layouts')
+@extends('Layouts_User.app')
 
 @section('content')
 <h5>Invoice Status</h5>
@@ -7,13 +7,6 @@
 <p>Address:{{$invoice->shipping_address}}</p>
 <p>Phone:{{$invoice->shipping_phone}}</p>
 <p>Status:{{$invoice->status}}</p>
-{{-- @if ($invoice->status='Pending')
-    <form action="{{route('show.canceled')}}" method="post">
-        @csrf
-        @method('Patch')
-        <button>Xóa</button>
-    </form>
-@endif --}}
 @if ($invoice->canBeCancelled())
     <form action="{{ route('invoices.cancel', ['id' => $invoice->id]) }}" method="post">
         @csrf

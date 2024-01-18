@@ -115,7 +115,7 @@
                 <img src="{{ $slideshow->image }}" alt="slide"> 
             @endforeach
         </div>
-        <div class="dot-container">
+         <div class="dot-container">
             <div class="dot active"></div>
             <div class="dot"></div>
         </div>
