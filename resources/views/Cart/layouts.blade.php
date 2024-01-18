@@ -114,7 +114,6 @@
         <div class="slider-container">
             @foreach ( $slideshows as $slideshow )
                 <img src="{{ $slideshow->image }}" alt="slide"> 
-               
             @endforeach
         </div>
         <div class="dot-container">

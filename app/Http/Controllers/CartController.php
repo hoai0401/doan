@@ -63,8 +63,9 @@ class CartController extends Controller
             if ($carts->isEmpty()) {
                 return view('Cart.cart-index', ['carts' => null, 'title'=>'cart'] ); // Trả về view với biến cart rỗng
             }
-            return view('Cart.cart-index', compact('carts'), ['title'=>'cart',
-            'slideshows' => Slideshow::where('deleted_at', NULL)->get()
+            $slideshows = Slideshow::where('deleted_at', NULL)->get();
+            return view('Cart.cart-index', compact('carts','slideshows'), ['title'=>'cart',
+
         ]);
         }
         else{
@@ -95,7 +96,9 @@ class CartController extends Controller
                 ->get();
                 session(['productsData' => $cartProducts]);
                 session(['user' => $userData]);
-            return view('cart.checkout', compact('userData','cartProducts',));
+
+                $slideshows = Slideshow::where('deleted_at', NULL)->get();
+                return view('cart.checkout', compact('userData', 'cartProducts', 'slideshows'));
         }
         else{
             // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập
