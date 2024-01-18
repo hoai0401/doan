@@ -82,8 +82,8 @@ Route::get('/order', [OrderController::class, 'CreateIncvoice'])->name('order');
 
 
 //image
-// Route::get('images/create', [ImageController::class, 'create'])->name('images.create');
-// Route::post('images/store', [ImageController::class, 'store'])->name('images.store');
+Route::get('images/create', [ImageController::class, 'create'])->name('images.create');
+Route::post('images/store', [ImageController::class, 'store'])->name('images.store');
 
 //comment
 Route::get('/products/{id}/comment', [CommentController::class, 'showcomment'])->name('comments.show');

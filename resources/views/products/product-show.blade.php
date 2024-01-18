@@ -14,11 +14,17 @@
         <div class="hinh-sp">
             <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
         </div>
+        @foreach($images as $image)
+        <div class="hinh-sp">
+            <img src="{{ asset('storage/' . $image->image_url) }}" class="hinh" alt="{{ $product->name }}">
+        </div>
+        @endforeach
+
         <h1>{{ $product->name }}</h1>
         <h2 class="Gia"> {{ number_format($product->price) }}đ</h2>
         <h2>Mô tả sản phẩm:</h2>
         <p>{{ $product->description }}</p>
-
+        
 
         <?php
         $sizeid=1;
