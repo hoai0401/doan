@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Slideshow;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,7 +65,10 @@ class CartController extends Controller
             if ($carts->isEmpty()) {
                 return view('Cart.cart-index', ['carts' => null, 'title'=>'cart'] ); // Trả về view với biến cart rỗng
             }
-            return view('Cart.cart-index', compact('carts'), ['title'=>'cart']);
+            $slideshows = Slideshow::where('deleted_at', NULL)->get();
+            return view('Cart.cart-index', compact('carts','slideshows'), ['title'=>'cart',
+
+        ]);
         }
         else{
             // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập
@@ -94,7 +98,9 @@ class CartController extends Controller
                 ->get();
                 session(['productsData' => $cartProducts]);
                 session(['user' => $userData]);
-            return view('cart.checkout', compact('userData','cartProducts'));
+
+                $slideshows = Slideshow::where('deleted_at', NULL)->get();
+                return view('cart.checkout', compact('userData', 'cartProducts', 'slideshows'));
         }
         else{
             // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập

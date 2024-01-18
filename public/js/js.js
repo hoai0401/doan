@@ -44,3 +44,42 @@
 $(document).ready( function () {
     $('#myTable').DataTable();
 } );
+
+//product-show
+    $(document).ready(function () {
+        var images = $('.hinh');
+        var thumbnailsContainer = $('.thumbnails-container');
+
+        // Ẩn nút chuyển ảnh khi chỉ có một ảnh
+        if (images.length <= 1) {
+            thumbnailsContainer.hide();
+        }
+
+        // Tạo ảnh nhỏ tương ứng với số lượng ảnh
+        for (var i = 0; i < images.length; i++) {
+            var thumbnail = $('<img class="thumbnail">');
+            thumbnail.attr('src', images.eq(i).attr('src'));
+            thumbnail.attr('alt', images.eq(i).attr('alt'));
+            thumbnailsContainer.append(thumbnail);
+
+            // Xử lý sự kiện khi ảnh nhỏ được nhấn
+            thumbnail.on('click', function () {
+                var index = $(this).index();
+                showImage(index);
+            });
+        }
+
+        // Hiển thị ảnh đầu tiên và làm cho ảnh nhỏ tương ứng trở thành active
+        showImage(0);
+
+        // Hàm hiển thị ảnh và ảnh nhỏ tương ứng
+        function showImage(index) {
+            images.hide();
+            images.eq(index).show();
+            $('.thumbnail').removeClass('active');
+            $('.thumbnail').eq(index).addClass('active');
+        }
+    });
+
+//car
+

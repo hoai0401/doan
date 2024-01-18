@@ -18,7 +18,6 @@
 <body>
     <!--------------------------------head------------------------------->
     <header>
-    <div class="logo">
 
         <div class="logo">
         <a href="{{ url('/') }}">
@@ -117,6 +116,7 @@
                 <img src="{{ $slideshow->image }}" alt="slide"> 
                
             @endforeach --}}
+            @endforeach
         </div>
         <div class="dot-container">
             <div class="dot active"></div>

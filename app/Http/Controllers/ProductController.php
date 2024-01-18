@@ -28,9 +28,12 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $colors = Color::all();
-        $sizes = Size::all();
-        $this->fixImage($product);
-        return view('products/product-show',compact('product', 'colors', 'sizes'),  ['product'=>$product]);
+            $sizes = Size::all();
+            $this->fixImage($product);
+            $images = Image::where('product_id', $product->id)->get();
+
+            return view('products.product-show', compact('product', 'colors', 'sizes', 'images')
+        );
     }
 
     public function index()

@@ -16,13 +16,14 @@
   }
 
   .hinh-sp {
+    width: 50%;
     text-align: center;
     margin-bottom: 20px;
   }
 
   .hinh {
-    max-width: 100%;
-    height: auto; /* Allow the image to maintain its aspect ratio */
+    max-width: 50%;
+    height: 10%; /* Allow the image to maintain its aspect ratio */
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -68,17 +69,7 @@
     background-color: #f0f0f0;
   }
 
-  button[type="submit"] {
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    transition: background-color 0.4s;
-    margin-right: 10px;
-  }
 
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
 
 
 .Gia{
@@ -180,3 +171,7 @@ body {
   padding: 10px;
   margin-bottom: 5px;
 }
+
+
+
+
