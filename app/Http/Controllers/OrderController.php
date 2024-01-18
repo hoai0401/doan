@@ -42,21 +42,6 @@ class OrderController extends Controller
                 'created_at' => now(),
                 'updated_at' => null,
             ]);
-            // try{
-            //     Invoice::create([
-            //         $request->except('_token'),
-            //         'user_id' => $userId,
-            //         'issued_date' => Carbon::now(),
-            //         'shipping_address'=>(string)$request->input('shipping_address'),
-            //         'shipping_phone' => $userData[0]->phone,
-            //         'status' => 1,
-            //         'created_at' => now(),
-            //         'updated_at' => null,
-            //     ]);
-            // }catch(\Exception $e)
-            // {
-            //     return redirect()->back()->withInput();
-            // }
     
             // Thêm vào bảng invoice_details
             foreach ($productData as $product) {

@@ -62,13 +62,13 @@ class CartController extends Controller
                 ->where('carts.user_id', $userId)
                 ->get();
                 // dd($carts);
-            if ($carts->isEmpty()) {
-                return view('Cart.cart-index', ['carts' => null, 'title'=>'cart'] ); // Trả về view với biến cart rỗng
-            }
-            $slideshows = Slideshow::where('deleted_at', NULL)->get();
-            return view('Cart.cart-index', compact('carts','slideshows'), ['title'=>'cart',
-
-        ]);
+                if ($carts->isEmpty()) {
+                    return view('Cart.cart-index', ['carts' => null, 'title'=>'cart',
+                    'slideshows' => Slideshow::where('deleted_at', NULL)->get()
+                ]); // Trả về view với biến cart rỗng
+                }
+                $slideshows = Slideshow::where('deleted_at', NULL)->get();
+                return view('Cart.cart-index', compact('carts','slideshows'), ['title'=>'cart']);
         }
         else{
             // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập

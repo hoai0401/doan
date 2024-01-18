@@ -110,7 +110,7 @@
     </header>
 
     <!--------------------------------slide------------------------------->
-    {{-- <section id="slider">
+    <section id="slider">
         <div class="slider-container">
             @foreach ( $slideshows as $slideshow )
                 <img src="{{ $slideshow->image }}" alt="slide"> 
@@ -121,7 +121,7 @@
             <div class="dot active"></div>
             <div class="dot"></div>
         </div>
-    </section> --}}
+    </section>
 <br>
     <div id="myTable" class="khung-chua-san-pham">
         <!-- Phần sản phẩm nổi bật -->

@@ -17,27 +17,25 @@
             @php
                 $totalAmount=0;
             @endphp
-            @foreach($carts as $cart)
-                <tr>
-                    <td>{{$cart->name}}</td>
-                    <td>{{ $cart->price }}</td>    
-                    <td>{{ $cart->quantity }}</td>
-                    {{-- <td><img src="{{$cart->image_url}}" ></td> --}}
-                    <td><img src="storage/{{$cart->image_url}}" alt="Image 1" style="max-width: 100px; max-height: 100px;"></td>
-                </tr>
-                @php
-                    $totalAmount+=$cart->price*$cart->quantity;
-                @endphp
-            @endforeach
+            @if ($carts)
+                @foreach($carts as $cart)
+                    <tr>
+                        <td>{{$cart->name}}</td>
+                        <td>{{ $cart->price }}</td>    
+                        <td>{{ $cart->quantity }}</td>
+                        {{-- <td><img src="{{$cart->image_url}}" ></td> --}}
+                        <td><img src="storage/{{$cart->image_url}}" alt="Image 1" style="max-width: 100px; max-height: 100px;"></td>
+                    </tr>
+                    @php
+                        $totalAmount+=$cart->price*$cart->quantity;
+                    @endphp
+                @endforeach
+            @endif
         </tbody>
         </table>
         <div>
             <h3>Tổng tiền: {{$totalAmount}}</h3>
         </div>
-        {{-- <form action="" method="get">
-            @csrf
-            <button type="submit" name="action" value="buynow">Mua ngay</button>
-        </form> --}}
         <a href="{{route('checkout')}}">
             Check Out
         </a>
