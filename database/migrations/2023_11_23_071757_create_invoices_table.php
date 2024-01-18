@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('shipping_phone');
             $table->enum('status', ['Pending', 'Transporting', 'Paid', 'Canceled'])->default('Pending');
             $table->timestamps();
-            
         });
     }
 

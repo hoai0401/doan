@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Invoice;
 use App\Models\Slideshow;
 use Illuminate\Support\Facades\Storage;
 
@@ -33,7 +34,8 @@ class HomeController extends Controller
         }
         return view('layouts.home',[
             'lst'=>$lst,
-            'slideshows' => Slideshow::where('deleted_at', NULL)->get()
+            'slideshows' => Slideshow::where('deleted_at', NULL)->get(),
+            'invoice'=>Invoice::where('status')->get()
         ]);
     }
     public function show($id)

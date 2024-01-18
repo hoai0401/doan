@@ -13,5 +13,10 @@ class Invoice extends Model
         'issued_date',
         'shipping_address',
         'shipping_phone',
+        'status',
     ];
+    public function canBeCancelled()
+    {
+        return $this->status === 'Pending' || $this->status === 'Transporting';
+    }
 }

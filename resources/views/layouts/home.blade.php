@@ -66,7 +66,6 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="">LIFESTYLE</a></li>
             @auth
             @if(Auth::user()->is_admin)
                 <li><a href="{{ route('dashboard') }}">Admin</a></li>
@@ -94,6 +93,7 @@
                                 </div>
                                 <div class="dropdown-content">
                                     <a href="{{ route('users.index') }}">Thông tin tài khoản</a>
+                                    <a href="{{route('show.invoice') }} ">Đơn Hàng</a>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
                                 </div>
                             </div>
@@ -114,7 +114,6 @@
         <div class="slider-container">
             @foreach ( $slideshows as $slideshow )
                 <img src="{{ $slideshow->image }}" alt="slide"> 
-               
             @endforeach
         </div>
          <div class="dot-container">
@@ -140,7 +139,7 @@
 
                     <div class="them-vao-gio-hang">
                         @auth
-                            <a class="them" href="{{ route('cart.add', ['id' => $product->id]) }}">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
+                            <a class="them" href="">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
                         @else
                             <a class="them" href="#" onclick="redirectToLogin()">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
                         @endauth

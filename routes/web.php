@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SlideshowController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,9 +68,10 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/cart/add/{productid}/{sizeid}/{colorid}', [CartController::class, 'addcart'])->name('cartadd');
+
+
 Route::get('/', [HomeController::class, 'index']);
 
-Route::post('cart/{id}', 'CartController@addcart')->name('cart.add');
 
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 
@@ -97,3 +99,7 @@ Route::get('/slideshows', [SlideshowController::class, 'index'])->name('slidesho
 Route::get('/slideshows/create', [SlideshowController::class, 'create'])->name('slideshows.create');
 Route::post('/slideshows/store', [SlideshowController::class, 'store'])->name('slideshows.store');
 Route::delete('/slideshows/{id}', [SlideshowController::class,'destroy'])->name('slideshows.destroy');
+
+Route::get('/invoices/showstatus',[InvoiceController::class,'showstatus'])->name('show.invoice');
+// Route::patch('/invoices/canceled',[InvoiceController::class,'canceled'])->name('show.canceled');
+Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');

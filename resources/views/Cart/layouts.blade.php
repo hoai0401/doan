@@ -66,7 +66,6 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="">LIFESTYLE</a></li>
             @auth
             @if(Auth::user()->is_admin)
                 <li><a href="{{ route('dashboard') }}">Admin</a></li>
