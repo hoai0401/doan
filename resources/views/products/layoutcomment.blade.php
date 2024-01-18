@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src="{{ asset('js/js.js') }}" defer></script>
-
 </head>
 <body>
     <!--------------------------------head------------------------------->

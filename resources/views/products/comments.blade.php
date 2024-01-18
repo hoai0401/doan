@@ -26,7 +26,7 @@
                             <button type="submit">Reply</button>
                         </form>
                     @else
-                    
+
                 @endif
             @else
             @endif

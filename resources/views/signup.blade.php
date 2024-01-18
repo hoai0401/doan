@@ -30,7 +30,7 @@
 
       <div class="login-page">
         <div class="form">
-            <form method="POST" action="{{ route('signup') }}">
+            <form method="POST" action="{{ route('signup') }}" onsubmit="showSuccessMessage();">
                 @csrf
                 <lottie-player
                     src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
@@ -47,9 +47,14 @@
                 <input type="password" name="password_confirmation" placeholder="Confirm Password" />
                 <button type="submit">SIGN UP</button>
             </form>
-
-
-
+            <!-- Bảng modal -->
+            <div id="success-modal" class="modal">
+                <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Đăng ký thành công!</p>
+                </div>
+            </div>
+             
           <form class="login-form">
             <a href="{{ route('login') }}"><button type="button">LOGIN</button></a>
           </form>
@@ -57,6 +62,15 @@
       </div>
     </body>
     <script>
+    function showSuccessMessage() {
+        var modal = document.getElementById("success-modal");
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("success-modal");
+        modal.style.display = "none";
+    }
       function show() {
         var password = document.getElementById("password");
         var icon = document.querySelector(".fas");
@@ -68,6 +82,7 @@
           password.type = "password";
         }
       }
+
     </script>
   </html>
 </html>
