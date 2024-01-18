@@ -23,7 +23,7 @@
 
   .hinh {
     max-width: 50%;
-    height: auto; /* Allow the image to maintain its aspect ratio */
+    height: 10%; /* Allow the image to maintain its aspect ratio */
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -171,3 +171,7 @@ body {
   padding: 10px;
   margin-bottom: 5px;
 }
+
+
+
+
