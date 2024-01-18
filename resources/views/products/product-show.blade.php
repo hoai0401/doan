@@ -6,24 +6,100 @@
     <title>{{ $product->name }}</title>
     <link rel="stylesheet" href="{{ asset('css/product_show.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Điều chỉnh kích thước container theo mong muốn */
+            margin: 0 auto;
+        }
 
+        .hinh {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            max-width: 100%; /* Thêm thuộc tính max-width để giữ ảnh nhỏ có thể xếp chồng */
+        }
+    </style>
 </head>
 <body>
-
     <div class="product-details">
-        <div class="hinh-sp">
+        
+        <div class="image-container" id="imageContainer">
             <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
+            @foreach($images as $index => $image)
+                <img src="{{ asset('storage/' . $image->image_url) }}" class="hinh" alt="{{ $product->name }}" style="display: none;">
+            @endforeach
+            <div class="thumbnails" id="thumbnailsContainer"></div>
         </div>
-        @foreach($images as $image)
-        <div class="hinh-sp">
-            <img src="{{ asset('storage/' . $image->image_url) }}" class="hinh" alt="{{ $product->name }}">
-        </div>
-        @endforeach
-
+        
         <h1>{{ $product->name }}</h1>
         <h2 class="Gia"> {{ number_format($product->price) }}đ</h2>
         <h2>Mô tả sản phẩm:</h2>
         <p>{{ $product->description }}</p>
+
+        <script>
+            $(document).ready(function () {
+                var currentIndex = 0;
+                var images = $('.hinh');
+                var thumbnailsContainer = $('#thumbnailsContainer');
+
+                // Ẩn nút chuyển ảnh khi chỉ có một ảnh
+                if (images.length <= 1) {
+                    thumbnailsContainer.hide();
+                }
+
+                // Tạo ảnh nhỏ tương ứng với số lượng ảnh
+                for (var i = 0; i < images.length; i++) {
+                    var thumbnail = $('<img class="thumbnail">');
+                    thumbnail.attr('src', images.eq(i).attr('src'));
+                    thumbnail.attr('alt', images.eq(i).attr('alt'));
+                    thumbnailsContainer.append(thumbnail);
+
+                    // Xử lý sự kiện khi ảnh nhỏ được nhấn
+                    thumbnail.on('click', function () {
+                        currentIndex = $(this).index();
+                        showImage(currentIndex);
+                    });
+                }
+                
+                // Hiển thị ảnh đầu tiên và làm cho ảnh nhỏ tương ứng trở thành active
+                showImage(currentIndex);
+                
+                // Hàm hiển thị ảnh và ảnh nhỏ tương ứng
+                function showImage(index) {
+                    images.hide();
+                    images.eq(index).show();
+                    $('.thumbnail').removeClass('active');
+                    $('.thumbnail').eq(index).addClass('active');
+                }
+            });
+        </script>
         
 
         <?php
