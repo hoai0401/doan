@@ -19,4 +19,13 @@ class Invoice extends Model
     {
         return $this->status === 'Pending' || $this->status === 'Transporting';
     }
+    public function canBeMarkedTransporting()
+    {
+        return $this->status === 'Pending';
+    }
+    public function canBeMarkedPaid()
+    {
+        return $this->status === 'Transporting';
+    }
+    
 }

@@ -100,6 +100,17 @@ Route::get('/slideshows/create', [SlideshowController::class, 'create'])->name('
 Route::post('/slideshows/store', [SlideshowController::class, 'store'])->name('slideshows.store');
 Route::delete('/slideshows/{id}', [SlideshowController::class,'destroy'])->name('slideshows.destroy');
 
+Route::get('/admin/invoices', [InvoiceController::class, 'index'])->name('admin.invoices.index');
+Route::get('/admin/invoices', [InvoiceController::class, 'index'])->name('admin.invoices.index');
 Route::get('/invoices/showstatus',[InvoiceController::class,'showstatus'])->name('show.invoice');
-// Route::patch('/invoices/canceled',[InvoiceController::class,'canceled'])->name('show.canceled');
 Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
+Route::post('markTransporting/{id}', [InvoiceController::class, 'markTransporting'])->name('invoices.markTransporting');
+Route::post('markPaid/{id}', [InvoiceController::class, 'markPaid'])->name('invoices.markPaid');
+
+Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
+    Route::resource('admin/invoices', InvoiceController::class)->only(['index', 'show']);
+    
+    Route::post('admin/invoices/{id}/markPaid', [InvoiceController::class, 'markPaid'])->name('admin.invoices.markPaid');
+    Route::post('admin/invoices/{id}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.markCancelled');
+    Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
+});
