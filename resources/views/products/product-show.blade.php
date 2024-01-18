@@ -8,6 +8,7 @@
     <title>{{ $product->name }}</title>
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('css/logo.css') }}">
@@ -77,8 +78,8 @@
         <button class="timkiem" type="submit">Tìm kiếm</button>
     </form>
 </li>
-    <li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
-    </li>
+<li><a href="@auth {{ route('cart.index') }} @else {{ route('login') }} @endauth" class="ti-shopping-cart"></a>
+            </li>
 </div>
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 @guest
@@ -196,9 +197,9 @@
                                 
                                 <div class="action">
                                 <form action="{{ route('cartadd', ['productid' => $product->id, 'sizeid' => $sizeid, 'colorid' => $colorid]) }}" method="get">
-                                        @csrf
-                                        <a class="add-to-cart btn btn-default" id="btnThemVaoGioHang">Thêm vào giỏ hàng</a>
-                                    </form>
+                                    @csrf
+                                    <button type="submit" name="action" value="buynow">Thêm giỏ hàng</button>
+                                </form>
                                     
                                 </div>
                                 <div class="comment-section">

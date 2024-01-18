@@ -80,3 +80,6 @@ $(document).ready( function () {
             $('.thumbnail').eq(index).addClass('active');
         }
     });
+
+//car
+
