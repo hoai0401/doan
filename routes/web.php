@@ -68,6 +68,7 @@ Route::put('users/{user}', [UserController::class, 'update'])->name('users.updat
 //Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/cart/add/{productid}/{sizeid}/{colorid}', [CartController::class, 'addcart'])->name('cartadd');
+Route::post('/update-cart', [CartController::class, 'updateCart']);
 
 
 Route::get('/', [HomeController::class, 'index']);

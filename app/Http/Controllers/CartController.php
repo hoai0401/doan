@@ -107,5 +107,35 @@ class CartController extends Controller
             return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để xem giỏ hàng.');
         }
     }
+    public function updateCart(Request $request)
+    {
+        $productId = $request->input('productId');
+        $action = $request->input('action');
+
+        // Lấy thông tin giỏ hàng cho sản phẩm
+        $cartItem = Cart::where('product_id', $productId)->first();
+
+        if (!$cartItem) {
+            // Xử lý trường hợp sản phẩm không có trong giỏ hàng
+            return response()->json(['error' => 'Product not found in cart'], 404);
+        }
+
+        // Cập nhật số lượng dựa vào action
+        if ($action == 'increase') {
+            $cartItem->quantity++;
+        } elseif ($action == 'decrease') {
+            if ($cartItem->quantity > 1) {
+                $cartItem->quantity--;
+            }
+        }
+
+        // Lưu thay đổi
+        $cartItem->save();
+
+        // Trả về dữ liệu cập nhật, ví dụ: số lượng mới
+        $newQuantity = $cartItem->quantity;
+
+        return response()->json(['quantity' => $newQuantity]);
+    }
     
 }
