@@ -137,5 +137,5 @@ class CartController extends Controller
 
         return response()->json(['quantity' => $newQuantity]);
     }
-    // cjccjcjcjcj
+   
 }
