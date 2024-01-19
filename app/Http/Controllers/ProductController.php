@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Size;
 use App\Models\Slideshow;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -24,7 +25,7 @@ class ProductController extends Controller
             $p->image='/image/no_image_placeholder.png';
         }
     }
-   
+
     public function show(Product $product)
     {
         $colors = Color::all();
@@ -124,5 +125,18 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+
+        $products = Product::where('name', 'like', "%{$searchTerm}%")->paginate(20);
+        foreach($products as $p)
+        {
+            $this -> fixImage($p);
+        }
+       return view('search', ['products' => $products, 'searchTerm' => $searchTerm]);
+
     }
 }

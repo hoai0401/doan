@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::resource('/products',ProductController::class)->except(['index','show']);
-
     Route::post('logout',[LoginController::class,'logout'])->name('logout');
     //ADMIN
     Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
@@ -27,6 +26,7 @@ Route::middleware('auth')->group(function(){
         })->name('dashboard');
     });
 });
+Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 //loại sản phẩm
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
@@ -110,7 +110,7 @@ Route::post('markPaid/{id}', [InvoiceController::class, 'markPaid'])->name('invo
 
 Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
     Route::resource('admin/invoices', InvoiceController::class)->only(['index', 'show']);
-    
+
     Route::post('admin/invoices/{id}/markPaid', [InvoiceController::class, 'markPaid'])->name('admin.invoices.markPaid');
     Route::post('admin/invoices/{id}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.markCancelled');
     Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
