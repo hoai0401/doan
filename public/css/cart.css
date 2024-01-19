@@ -1,0 +1,61 @@
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #0d0d0d;
+    border: 1px solid #3498db;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+    transition: background-color 0.3s;
+    border-radius: 4px; /* Bo tròn góc button */
+}
+
+.quantity-btn:hover {
+    background-color: #2980b9;
+}
+
+.quantity {
+    font-size: 18px;
+    margin: 0 10px;
+    min-width: 30px; /* Đảm bảo kích thước tối thiểu của span */
+    text-align: center; /* Căn giữa nội dung trong span */
+    padding: 5px; /* Thêm padding để tăng khoảng cách */
+    border: 1px solid #3498db; /* Đường viền để tạo độ phân biệt */
+    border-radius: 4px; /* Bo tròn góc span */
+}
+
+/* Thêm hiệu ứng khi hover vào span */
+.quantity:hover {
+    background-color: #f2f1f1;
+}
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Phần tổng tiền */
+#totalAmount {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Nút Checkout */
+.checkout-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+.checkout-btn:hover {
+    background-color: #2980b9;
+}
