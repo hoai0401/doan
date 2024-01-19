@@ -165,11 +165,7 @@
                             <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
 
                             <div class="them-vao-gio-hang">
-                                @auth
-                                    <a class="them" href="{{ route('cart.add', ['id' => $product->id]) }}">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
-                                @else
-                                    <a class="them" href="#" onclick="redirectToLogin()">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
-                                @endauth
+                               
                             </div>
                         </a>
                     </div>
