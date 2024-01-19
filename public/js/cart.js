@@ -43,3 +43,4 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('totalAmount').textContent = `Tổng tiền: ${newTotalAmount}`;
     }
 });
+// lll
