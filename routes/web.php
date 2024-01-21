@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SaleStatisticsController;
 use App\Http\Controllers\SlideshowController;
 use App\Http\Controllers\UserOderController;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
@@ -128,3 +130,8 @@ Route::middleware(['auth'])->group(function () {
 
 // sale-statistics
 Route::get('/sale-statistics', [SaleStatisticsController::class, 'index'])->name('sale-statistics.index');
+
+//yeu thich
+Route::get('/favorites', [FavoriteController::class,'index'])->name('index.fa');
+Route::post('/favorites/{product_id}', [FavoriteController::class,'toggleFavorite'])->name('favor.add');
+Route::delete('/favorites/{product_id}', [FavoriteController::class, 'destroy'])->name('favor.destroy');

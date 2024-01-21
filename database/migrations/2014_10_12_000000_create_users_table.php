@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_admin')->default(false);
             $table->string('phone')->nullable();
+            $table->string('Address')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

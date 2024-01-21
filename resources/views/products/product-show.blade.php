@@ -200,7 +200,10 @@
                                     @csrf
                                     <button type="submit" name="action" value="buynow">Thêm giỏ hàng</button>
                                 </form>
-                                    
+                                <form action="{{ route('favor.add', $product->id) }}" method="post">
+                                    @csrf
+                                    <button type="submit">Thêm vào yêu thích</button>
+                                </form>
                                 </div>
                                 <div class="comment-section">
                                 <h2>Bình luận:</h2>

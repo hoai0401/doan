@@ -94,6 +94,7 @@
                                 <div class="dropdown-content">
                                     <a href="{{ route('users.index') }}">Thông tin tài khoản</a>
                                     <a href="{{route('user.orders.index') }} ">Đơn Hàng</a>
+                                    <a href="{{route('index.fa')}}">Danh Sách Yêu Thích</a>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
                                 </div>
                             </div>
@@ -135,9 +136,6 @@
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
                     <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>           
-                        <button class="favorite-btn" data-product-id="{{ $product->id }}">
-                            <i class="fa fa-heart"></i> Yêu thích
-                        </button>
                     <script>
                         function redirectToLogin() {
                             window.location.href = "{{ route('login') }}";

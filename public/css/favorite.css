@@ -1,0 +1,105 @@
+/* Reset CSS */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Header Styles */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Product Styles */
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+/* No favorite products message */
+p.no-favorites {
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    li {
+        padding: 10px;
+    }
+}
+/* CSS cho form thêm vào giỏ hàng */
+form.add-to-cart-form {
+    display: inline-block;
+    margin-right: 10px; /* Khoảng cách giữa các button */
+}
+
+button.add-to-cart-button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.add-to-cart-button:hover {
+    background-color: #45a049;
+}
+
+/* CSS cho form xóa sản phẩm khỏi danh sách yêu thích */
+form.remove-from-favorites-form {
+    display: inline-block;
+}
+
+button.remove-from-favorites-button {
+    padding: 10px 15px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.remove-from-favorites-button:hover {
+    background-color: #c9302c;
+}
