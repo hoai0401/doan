@@ -81,5 +81,8 @@ $(document).ready( function () {
         }
     });
 
-//car
+//sale-statistics
+
+
+
 

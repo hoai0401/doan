@@ -13,6 +13,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\SaleStatisticsController;
 use App\Http\Controllers\SlideshowController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,8 +83,6 @@ Route::get('/checkout', [CartController::class, 'checkoutshow'])->name('checkout
 Route::get('/order', [OrderController::class, 'CreateIncvoice'])->name('order');
 
 
-
-
 //image
 Route::get('images/create', [ImageController::class, 'create'])->name('images.create');
 Route::post('images/store', [ImageController::class, 'store'])->name('images.store');
@@ -115,3 +114,7 @@ Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
     Route::post('admin/invoices/{id}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.markCancelled');
     Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
 });
+
+
+// sale-statistics
+Route::get('/sale-statistics', [SaleStatisticsController::class, 'index'])->name('sale-statistics.index');
