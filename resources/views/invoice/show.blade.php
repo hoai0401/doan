@@ -1,13 +1,26 @@
 @extends('Layouts_User.app')
 
 @section('content')
-<h5>Invoice Status</h5>
-<p>User: {{$invoice->user_id}}</p>
-<p>Invoice Date:{{$invoice->issued_date}}</p>
-<p>Address:{{$invoice->shipping_address}}</p>
-<p>Phone:{{$invoice->shipping_phone}}</p>
-<p>Status:{{$invoice->status}}</p>
+<link rel="stylesheet" href="{{ asset('css/invoice.css') }}">
+<h1>My Invoices</h1>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Issued Date</th>
+                <th>Status</th>
+                <!-- Thêm các cột khác nếu cần -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($invoices as $invoice)
+                <tr>
+                    <td>{{ $invoice->issued_date }}</td>
+                    <td>{{ $invoice->status }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @if (Auth::user()->is_admin)
     @if ($invoice->status == 'Pending')
         <!-- Nếu trạng thái là Pending -->

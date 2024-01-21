@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="dropdown-content">
                                     <a href="{{ route('users.index') }}">Thông tin tài khoản</a>
-                                    <a href="{{route('show.invoice') }} ">Đơn Hàng</a>
+                                    <a href="{{route('user.orders.index') }} ">Đơn Hàng</a>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
                                 </div>
                             </div>
@@ -134,17 +134,10 @@
                         <img src="{{ $product->image }}" class="hinh" alt="{{ $product->name }}">
                     </div>
                     <p class="ten-sp">{{ $product->name }}</p>
-                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>
-
-
-                    <div class="them-vao-gio-hang">
-                        @auth
-                            <a class="them" href="">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
-                        @else
-                            <a class="them" href="#" onclick="redirectToLogin()">Add <img class="icon-cart" src="{{ asset('img/icon-cart.png') }}"></a>
-                        @endauth
-                    </div>
-
+                    <p class="gia-tien">{{ number_format($product->price) }} <span style="font-size: 14px">đ</span></p>           
+                        <button class="favorite-btn" data-product-id="{{ $product->id }}">
+                            <i class="fa fa-heart"></i> Yêu thích
+                        </button>
                     <script>
                         function redirectToLogin() {
                             window.location.href = "{{ route('login') }}";
@@ -229,6 +222,7 @@
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
 <script>
     const imgPosition = document.querySelectorAll(".slider-container img")
     const imgContainer = document.querySelector(".slider-container")
@@ -269,5 +263,41 @@
         document.querySelector('.dropdown-content').style.display = 'none';
     });
 
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const favoriteButtons = document.querySelectorAll('.favorite-btn');
+
+        favoriteButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const productId = button.getAttribute('data-product-id');
+                toggleFavorite(productId);
+            });
+        });
+
+        function toggleFavorite(productId) {
+            // Gửi yêu cầu Ajax để thêm hoặc xóa sản phẩm yêu thích
+            // Sử dụng productId để xác định sản phẩm cụ thể
+
+            // Ở đây có thể sử dụng axios hoặc fetch để gửi yêu cầu Ajax
+            // Ví dụ sử dụng axios:
+            axios.post('/toggle-favorite', { productId: productId })
+                .then(function (response) {
+                    // Xử lý kết quả từ server, ví dụ cập nhật giao diện
+                    const isFavorite = response.data.isFavorite;
+
+                    if (isFavorite) {
+                        // Nếu là sản phẩm yêu thích, thay đổi kiểu dáng nút
+                        button.classList.add('favorited');
+                    } else {
+                        // Nếu không phải là sản phẩm yêu thích, xóa kiểu dáng nút
+                        button.classList.remove('favorited');
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Error toggling favorite', error);
+                });
+        }
+    });
 </script>
 </html>

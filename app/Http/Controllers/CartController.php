@@ -106,37 +106,42 @@ class CartController extends Controller
             // Nếu chưa đăng nhập, chưa có ID người dùng, trả về trang đăng nhập
             return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để xem giỏ hàng.');
         }
-    }
+    } 
     public function updateCart(Request $request)
     {
         try {
             $productId = $request->input('productId');
             $action = $request->input('action');
-    
+
             // Kiểm tra xem sản phẩm có tồn tại trong giỏ hàng hay không
             $cartItem = Cart::where('product_id', $productId)->first();
-    
+
             if (!$cartItem) {
                 return response()->json(['error' => 'Product not found in cart'], 404);
             }
-    
+
             // Cập nhật số lượng dựa vào action
             if ($action === 'increase') {
                 $cartItem->quantity++;
             } elseif ($action === 'decrease' && $cartItem->quantity > 1) {
                 $cartItem->quantity--;
+            } elseif ($action === 'decrease' && $cartItem->quantity === 1) {
+                // Nếu số lượng sẽ trở thành 0, xóa sản phẩm khỏi giỏ hàng
+                $cartItem->delete();
+                // Trả về thông báo rằng sản phẩm đã bị xóa
+                return response()->json(['message' => 'Product removed from cart']);
             }
-    
+
             // Lưu thay đổi
             $cartItem->save();
-    
+
             // Trả về dữ liệu cập nhật, ví dụ: số lượng mới
             $newQuantity = $cartItem->quantity;
-    
+
             return response()->json(['quantity' => $newQuantity]);
         } catch (\Exception $e) {
             // Xử lý lỗi nếu có
             return response()->json(['error' => 'Error updating cart quantity', 'message' => $e->getMessage()], 500);
         }
-    }    
+    }
 }

@@ -1,0 +1,78 @@
+/* Reset CSS */
+body, h1, h2, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header Styles */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Màu và độ dày của đường viền */
+    border-radius: 5px; /* Cong tròn các góc */
+    padding: 10px; /* Khoảng cách bên trong đường viền */
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #2196f3;
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Details Link Styles */
+a.details-link {
+    color: #2196f3;
+}
+
+a.details-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+}

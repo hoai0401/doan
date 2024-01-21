@@ -75,3 +75,11 @@
 	color: blue;
 	transition:0.3s;
 }
+.favorite-btn {
+	cursor: pointer;
+	color: #555;
+}
+
+.favorite-btn.favorited {
+	color: #e74c3c;
+}

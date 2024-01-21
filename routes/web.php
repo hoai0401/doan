@@ -14,6 +14,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SlideshowController;
+use App\Http\Controllers\UserOderController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
@@ -114,4 +115,14 @@ Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
     Route::post('admin/invoices/{id}/markPaid', [InvoiceController::class, 'markPaid'])->name('admin.invoices.markPaid');
     Route::post('admin/invoices/{id}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.markCancelled');
     Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/orders/{status?}', [UserOderController::class, 'index'])
+        ->name('user.orders.index')
+        ->where('status', 'all|pending|transporting|paid|canceled');
+
+    Route::get('/user/orders/show/{id}', [UserOderController::class, 'show'])
+        ->name('user.orders.show');
+    // Thêm các route khác nếu cần
 });

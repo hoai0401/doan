@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Color;
@@ -10,6 +11,7 @@ use App\Models\Image;
 use App\Models\Product;
 use App\Models\Size;
 use App\Models\Slideshow;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -124,5 +126,31 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
+
+    public function favorite($productID)
+    {
+        // if (Auth::check()) {
+        //     $userId = Auth::user()->id;
+    
+        //     // Kiểm tra sản phẩm đã có trong giỏ hàng của người dùng chưa
+        //     $existingCartItem = Cart::where('user_id', $userId)
+        //                             ->where('product_id', $productId)
+        //                             ->first();
+    
+        //         // Nếu sản phẩm chưa có trong giỏ hàng, tạo một mục mới
+        //         DB::table('carts')->insert([
+        //             'user_id' => $userId,
+        //             'product_id' => $productId,
+        //             'quantity' => $quantity,
+        //             'created_at' => now(),
+        //             'updated_at' => now(),
+        //         ]);
+        //     // dd($productId, $size, $color);
+        //     return redirect('/');
+        // } else {
+        //     return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.');
+        // }
+
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Invoice;
 use App\Models\Slideshow;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class InvoiceController extends Controller
 {
@@ -13,19 +15,6 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::all(); 
         return view('invoice.index', compact('invoices'));
-    }
-    public function showstatus()
-    {
-        $invoice=Invoice::latest()->first();
-        if($invoice)
-        {
-            $slideshows = Slideshow::where('deleted_at', NULL)->get();
-            return view('invoice.show',compact('invoice','slideshows'));
-        }
-        else
-        {
-            return redirect('/');
-        }
     }
  
     public function cancel($id)

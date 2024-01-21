@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     use HasFactory;
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function details()
+    {
+        return $this->hasMany(InvoiceDetail::class);
+    }
     protected $fillable = [
         'user_id',
         'issued_date',
