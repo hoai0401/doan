@@ -13,13 +13,13 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\SaleStatisticsController;
 use App\Http\Controllers\SlideshowController;
 use App\Http\Controllers\UserOderController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::resource('/products',ProductController::class)->except(['index','show']);
-
     Route::post('logout',[LoginController::class,'logout'])->name('logout');
     //ADMIN
     Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function(){
         })->name('dashboard');
     });
 });
+Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 //loại sản phẩm
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
@@ -83,8 +84,6 @@ Route::get('/checkout', [CartController::class, 'checkoutshow'])->name('checkout
 Route::get('/order', [OrderController::class, 'CreateIncvoice'])->name('order');
 
 
-
-
 //image
 Route::get('images/create', [ImageController::class, 'create'])->name('images.create');
 Route::post('images/store', [ImageController::class, 'store'])->name('images.store');
@@ -111,7 +110,7 @@ Route::post('markPaid/{id}', [InvoiceController::class, 'markPaid'])->name('invo
 
 Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
     Route::resource('admin/invoices', InvoiceController::class)->only(['index', 'show']);
-    
+
     Route::post('admin/invoices/{id}/markPaid', [InvoiceController::class, 'markPaid'])->name('admin.invoices.markPaid');
     Route::post('admin/invoices/{id}/cancel', [InvoiceController::class, 'cancel'])->name('admin.invoices.markCancelled');
     Route::post('invoices/{id}/cancel', [InvoiceController::class,'cancel'])->name('invoices.cancel');
@@ -126,3 +125,6 @@ Route::middleware(['auth'])->group(function () {
         ->name('user.orders.show');
     // Thêm các route khác nếu cần
 });
+
+// sale-statistics
+Route::get('/sale-statistics', [SaleStatisticsController::class, 'index'])->name('sale-statistics.index');

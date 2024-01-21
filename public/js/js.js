@@ -80,3 +80,9 @@ $(document).ready( function () {
             $('.thumbnail').eq(index).addClass('active');
         }
     });
+
+//sale-statistics
+
+
+
+
