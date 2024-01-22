@@ -29,13 +29,13 @@
     </div>
 @endsection --}}
 @section('content')
-    <h2>Change Password</h2>
+    <h2>Thay đổi mật khẩu</h2>
     <form method="post" action="{{ route('users.update-password', $user->id) }}">
         @csrf
         @method('PATCH')
 
         <div>
-            <label for="current_password">Current Password</label>
+            <label for="current_password">Mật khẩu hiện tại</label>
             <input type="password" name="current_password" required>
             @error('current_password')
                 <span class="text-danger">{{ $message }}</span>
@@ -43,13 +43,13 @@
         </div>
 
         <div>
-            <label for="password">New Password</label>
+            <label for="password">Mật khẩu mới</label>
             <input type="password" name="password" required>
             @error('password')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
 
-        <button type="submit">Update Password</button>
+        <button type="submit">Đổi Mật Khẩu</button>
     </form>
 @endsection
