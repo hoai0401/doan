@@ -162,3 +162,6 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+  .error-message {
+    color: red;
+}
