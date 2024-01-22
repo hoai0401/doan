@@ -16,7 +16,7 @@ class FavoriteController extends Controller
         $sizes = Size::where('deleted_at', NULL)->get();
         $colors = Color::where('deleted_at', NULL)->get();
         $user_id = Auth::id();
-        
+
         // Lấy danh sách sản phẩm yêu thích của người dùng từ database
         $favorites = Favorite::where('user_id', $user_id)->pluck('product_id')->toArray();
 

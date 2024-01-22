@@ -1,4 +1,3 @@
-
 @extends('Layouts_User.app')
 
 @section('content')

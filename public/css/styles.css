@@ -1222,5 +1222,5 @@ footer {
 }
 .custom-chart-container {
     position: relative; /* Đảm bảo position của div là relative */
-    left: -100px; /* Điều chỉnh giá trị này để di chuyển biểu đồ cột về bên trái */
+    left: 200px; /* Điều chỉnh giá trị này để di chuyển biểu đồ cột về bên trái */
 }
