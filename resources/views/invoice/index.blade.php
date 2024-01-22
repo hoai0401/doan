@@ -1,18 +1,18 @@
 @extends('admin.index')
 
 @section('content')
-    <h5>Admin Invoice Management</h5>
+    <h5>Quản lý Hóa đơn Admin</h5>
     <link rel="stylesheet" href="{{ asset('css_view/css.css') }}">
 
     <table class="table">
         <thead>
             <tr>
-                <th>User</th>
-                <th>Invoice Date</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Người dùng</th>
+                <th>Ngày Hóa đơn</th>
+                <th>Địa chỉ</th>
+                <th>Điện thoại</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
