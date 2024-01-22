@@ -13,8 +13,8 @@ class FavoriteController extends Controller
 {
     public function index(Request $request)
     {
-        $sizeid = Size::where('deleted_at', NULL)->get();
-        $colorid = Color::where('deleted_at', NULL)->get();
+        $sizes = Size::where('deleted_at', NULL)->get();
+        $colors = Color::where('deleted_at', NULL)->get();
         $user_id = Auth::id();
         
         // Lấy danh sách sản phẩm yêu thích của người dùng từ database
@@ -23,7 +23,7 @@ class FavoriteController extends Controller
         // Thực hiện truy vấn để lấy thông tin của tất cả các sản phẩm trong danh sách yêu thích
         $products = Product::whereIn('id', $favorites)->get();
 
-        return view('favorites.index', compact('products', 'favorites', 'sizeid', 'colorid'));
+        return view('favorites.index', compact('products', 'favorites', 'sizes', 'colors'));
     }
 
     public function toggleFavorite(Request $request, $product_id)

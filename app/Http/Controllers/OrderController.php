@@ -60,7 +60,7 @@ class OrderController extends Controller
                 // dd($invoice->id);
                 InvoiceDetail::create([
                     'quantity' => $product->quantity,
-                    'unit_price' => $product->price,
+                    'unit_price' => $product->price,    
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'invoice_id' => $invoice->id,

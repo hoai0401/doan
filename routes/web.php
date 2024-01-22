@@ -68,6 +68,8 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+Route::get('users/{userid}/passwordchange',[UserController::class,'passwordchange'])->name('users.changepass');
+Route::patch('users/{user}/resetpassword',[UserController::class,'resetpassword'])->name('users.resetpass');
 
 
 //Cart
