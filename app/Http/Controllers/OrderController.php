@@ -11,12 +11,12 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
     public function CreateIncvoice(Request $request){
-        // dd($request);
+        // dd($request->input('coupon'));
         if (Auth::check()) {
             $userId = Auth::user()->id;
             $productData = session('productsData');
@@ -31,7 +31,19 @@ class OrderController extends Controller
             }
             // dd($productData);
             // Thêm vào bảng invoices
+            $idvoucher=NULL;
+            $voucher = session('voucher');            
+            if($voucher != NULL){
+                $voucherdata = DB::table('promotions')
+                ->where('name', $voucher)
+                ->first();
+                DB::table('promotions')
+                    ->where('name', $voucher);
 
+                $totalAmount = $totalAmount - ($totalAmount * $voucherdata->discount_percentage/ 100);
+                $idvoucher = $voucherdata->id;
+            }
+            // dd($idvoucher,$totalAmount);
             $invoice=Invoice::create([
                 $request->except('_token'),
                 'user_id' => $userId,
@@ -39,10 +51,10 @@ class OrderController extends Controller
                 'shipping_address'=>$userData[0]->Address,
                 'shipping_phone' => $userData[0]->phone,
                 'status' => 1,
+                'Total'=>$totalAmount,
                 'created_at' => now(),
                 'updated_at' => null,
             ]);
-    
             // Thêm vào bảng invoice_details
             foreach ($productData as $product) {
                 // dd($invoice->id);
@@ -53,7 +65,8 @@ class OrderController extends Controller
                     'updated_at' => Carbon::now(),
                     'invoice_id' => $invoice->id,
                     'product_id' => $product->id,
-                    'combo_id' => null,
+                    'combo_id' => null,      
+                    'promotion_id'=>$idvoucher  
                 ]);
             }
             session()->forget('productsData');

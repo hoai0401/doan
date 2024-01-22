@@ -141,3 +141,5 @@ Route::delete('/favorites/{product_id}', [FavoriteController::class, 'destroy'])
 Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
 Route::get('/promotions/create', [PromotionController::class, 'create'])->name('promotions.create');
 Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
+
+Route::post('/applycoupon', [CartController::class, 'applyCoupon'])->name('applycoupon');

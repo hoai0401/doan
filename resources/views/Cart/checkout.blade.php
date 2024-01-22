@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form class="bg0 p-t-130 p-b-85">
+<div class="bg0 p-t-130 p-b-85">
     @csrf
         <div class="container mt-5">
             <div class="row">
@@ -45,22 +45,40 @@
                                     <span>total product cost: </span>
                                     <span>{{ $sumPriceCart }}</span>
                                 </div>
+                                <div><label >Percentage discount: {{intval(session('discount_percentage'))}}%</label></div>
                             </div>
-                            {{-- <div class="mb-3">
-                                <div class="info__order-box">
-                                    <span>transport fee: </span>
-                                    <span>30000</span>
+                            @php 
+                                $pricediscount = 0;
+                            @endphp
+                            @foreach ($cartProducts as $product)
+                        @endforeach
+                        @if (session('discount_percentage') != 0)
+                            @php
+                                $pricediscount = $sumPriceCart * session('discount_percentage') / 100;
+                            @endphp
+                        @else
+                            @php
+                                session()->forget('voucher');
+                            @endphp
+                        @endif
+                            <form id="voucher" action="{{ route('applycoupon') }}" method="POST">
+                                @csrf
+                                <div class="flex-w flex-m m-r-20 m-tb-5">
+                                    <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
+                                        name="coupon" placeholder="Coupon Code">
+                                    {{-- <button type="submit"
+                                            class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                        Apply coupon
+                                    </button> --}}
                                 </div>
-                            </div> --}}
-                            <div class="mb-3">
-                                <div class="info__order-box"><span>Discount applies: </span>
-                                    <span>0</span>
-                                </div>
-                            </div>
+                            </form>
+                            <a href="{{ route('applycoupon') }}" onclick="event.preventDefault(); document.getElementById('voucher').submit();"
+                            class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5"
+                            >Apply Coupon</a>
                             <div class="mb-3">
                                 <div style="color: red; font-weight: bold" class="info__order-box">
                                     <span>Total: </span>
-                                    <span >{{ $sumPriceCart }}</span>
+                                    <span >{{ $sumPriceCart-$pricediscount }}</span>
                                 </div>
                             <div class="text-center">
                                 @if ($sumPriceCart !== null && $sumPriceCart > 0)
@@ -88,5 +106,5 @@
                 </div>
             </div>
         </div>
-</form>
+    </div>
 @endsection

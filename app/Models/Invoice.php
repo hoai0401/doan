@@ -22,6 +22,7 @@ class Invoice extends Model
         'shipping_address',
         'shipping_phone',
         'status',
+        'Total'
     ];
     public function canBeCancelled()
     {

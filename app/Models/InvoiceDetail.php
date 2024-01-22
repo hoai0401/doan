@@ -17,5 +17,6 @@ class InvoiceDetail extends Model
         'product_id',
         'quantity',
         'unit_price',
+        'promotion_id',
     ];
 }

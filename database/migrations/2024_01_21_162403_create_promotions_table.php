@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('invoices', function (Blueprint $table) {
+        Schema::table('invoice_details', function (Blueprint $table) {
             $table->unsignedBigInteger('promotion_id')->nullable();
             $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('set null');
         });
@@ -27,7 +27,7 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::table('invoices', function (Blueprint $table) {
+        Schema::table('invoice_details', function (Blueprint $table) {
             $table->dropForeign(['promotion_id']);
             $table->dropColumn('promotion_id');
         });

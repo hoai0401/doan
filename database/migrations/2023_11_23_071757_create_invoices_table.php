@@ -14,6 +14,7 @@ return new class extends Migration
             $table->date('issued_date');
             $table->string('shipping_address');
             $table->string('shipping_phone');
+            $table->float('Total');
             $table->enum('status', ['Pending', 'Transporting', 'Paid', 'Canceled'])->default('Pending');
             $table->timestamps();
         });

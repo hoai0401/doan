@@ -144,4 +144,20 @@ class CartController extends Controller
             return response()->json(['error' => 'Error updating cart quantity', 'message' => $e->getMessage()], 500);
         }
     }
+    public function applyCoupon(Request $request)
+    {
+        $couponCode = $request->input('coupon');
+        session(['voucher' => $couponCode ]);
+        $couponData = DB::table('promotions')
+        ->where('name', $couponCode)
+        ->first();
+        // dd(session('discount'));
+        if ($couponData) {
+            $discount = $couponData->discount_percentage;
+        } else {
+            $discount = 0;
+            return redirect()->back()->with('discount_percentage', $discount ,'success', 'voucher không hợp lệ');
+        }
+        return redirect()->back()->with('discount_percentage', $discount,'success', 'voucher hợp lệ');
+    }
 }
