@@ -5,29 +5,29 @@
     <h1>My Orders</h1>
 
     <ul>
-        <li><a href="{{ route('user.orders.index', 'all') }}">All Orders</a></li>
-        <li><a href="{{ route('user.orders.index', 'pending') }}">Pending Orders</a></li>
-        <li><a href="{{ route('user.orders.index', 'transporting') }}">Orders in Transport</a></li>
-        <li><a href="{{ route('user.orders.index', 'paid') }}">Paid Orders</a></li>
-        <li><a href="{{ route('user.orders.index', 'canceled') }}">Canceled Orders</a></li>
+        <li><a href="{{ route('user.orders.index', 'all') }}">Tất cả đơn hàng</a></li>
+        <li><a href="{{ route('user.orders.index', 'pending') }}">Đang chờ</a></li>
+        <li><a href="{{ route('user.orders.index', 'transporting') }}">Đang vận chuyển</a></li>
+        <li><a href="{{ route('user.orders.index', 'paid') }}">Đã Giao</a></li>
+        <li><a href="{{ route('user.orders.index', 'canceled') }}">Đã hủy</a></li>
     </ul>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Issued Date</th>
-                <th>Status</th>
-                <th>Details</th>
+                <th>Ngày Lập</th>
+                <th>Trạng Thái</th>
+                <th>Chi Tiết</th>
+                <th>Giá</th>
             </tr>
         </thead>
         <tbody>
             @foreach($invoices as $invoice)
                 <tr>
-                    <td>{{ $invoice->id }}</td>
                     <td>{{ $invoice->issued_date }}</td>
                     <td>{{ $invoice->status }}</td>
-                    <td><a href="{{ route('user.orders.show', $invoice->id) }}">View Details</a></td>
+                    <td>{{$invoice->Total}}</td>
+                    <td><a href="{{ route('user.orders.show', $invoice->id) }}">Xem chi tiết</a></td>
                 </tr>
             @endforeach
         </tbody>

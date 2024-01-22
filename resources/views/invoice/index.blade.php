@@ -7,12 +7,12 @@
     <table class="table">
         <thead>
             <tr>
-                <th>User</th>
-                <th>Invoice Date</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Khách hàng</th>
+                <th>Ngày lập hóa đơn</th>
+                <th>Địa chỉ</th>
+                <th>SĐT</th>
+                <th>Thông tin đơn hàng</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>

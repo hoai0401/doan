@@ -1,5 +1,5 @@
 @extends('Layouts_User.app')
-@section('content')
+{{-- @section('content')
     <div class="container">
         <h2>Đổi mật khẩu</h2>
         <form method="post" action="{{ route('users.resetpass', $user->id) }}">
@@ -8,8 +8,8 @@
 
             <!-- Current Password -->
             <div class="form-group">
-                <label for="current_password">Mật khẩu hiện tại</label>
-                <input type="password" name="current_password" class="form-control" required>
+                <label for="password">Mật khẩu hiện tại</label>
+                <input type="password" name="password" class="form-control" required>
             </div>
 
             <!-- New Password -->
@@ -24,7 +24,32 @@
                 <input type="password" name="confirm_password" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Change Password</button>
+            <button type="submit" class="btn btn-primary">Thay đổi mật khẩu</button>
         </form>
     </div>
+@endsection --}}
+@section('content')
+    <h2>Change Password</h2>
+    <form method="post" action="{{ route('users.update-password', $user->id) }}">
+        @csrf
+        @method('PATCH')
+
+        <div>
+            <label for="current_password">Current Password</label>
+            <input type="password" name="current_password" required>
+            @error('current_password')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <div>
+            <label for="password">New Password</label>
+            <input type="password" name="password" required>
+            @error('password')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <button type="submit">Update Password</button>
+    </form>
 @endsection

@@ -4,7 +4,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/favorite.css' )}}">
     <div class="container">
-        <h2>Favorite Products</h2>
+        <h2>Danh sách sản phẩm</h2>
 
         @if(count($products) > 0)
             <ul>

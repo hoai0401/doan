@@ -93,7 +93,8 @@
                                     <a class="nav-item" id="user-name">{{ Auth::user()->name }}</a>
                                 </div>
                                 <div class="dropdown-content">
-                                    <a href="{{ route('users.index') }}">Thông tin tài khoản</a>
+                                    <a href="{{ route('users.index') }}">Thông tin tài khoản</a>    
+                                    <a href="{{route('index.fa')}}">Danh Sách Yêu Thích</a>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng Xuất</a>
                                 </div>
                             </div>

@@ -16,21 +16,14 @@ use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     public function CreateIncvoice(Request $request){
-        // dd($request->input('coupon'));
         if (Auth::check()) {
             $userId = Auth::user()->id;
             $productData = session('productsData');
             $userData = session('user');
-            // dd($userData);
-    
-            // Tính tổng giá tiền
             $totalAmount = 0;
             foreach ($productData as $product) {
-                // dd($product);
                 $totalAmount += $product->price * $product->quantity;
             }
-            // dd($productData);
-            // Thêm vào bảng invoices
             $idvoucher=NULL;
             $voucher = session('voucher');            
             if($voucher != NULL){
@@ -57,7 +50,6 @@ class OrderController extends Controller
             ]);
             // Thêm vào bảng invoice_details
             foreach ($productData as $product) {
-                // dd($invoice->id);
                 InvoiceDetail::create([
                     'quantity' => $product->quantity,
                     'unit_price' => $product->price,    
