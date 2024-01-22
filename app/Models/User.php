@@ -17,11 +17,11 @@ class User extends Authenticatable
         'password' => '', 
         'is_admin' => 0, // Đặt giá trị mặc định cho is_admin
         'phone' => '', 
-        'Address'=>'',
+        'address'=>'',
         'email_verified_at' => null, // Đặt giá trị mặc định cho email_verified_at
     ];
     protected $fillable = [
-        'name', 'email', 'password', 'is_admin', 'phone','Address', 'email_verified_at',
+        'name', 'email', 'password', 'is_admin', 'phone','address', 'email_verified_at',
     ];
 
 

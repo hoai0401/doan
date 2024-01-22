@@ -10,6 +10,7 @@
                 <th>Tên</th>
                 <th>Email</th>
                 <th>Số Điện Thoại</th>
+                <th>Địa Chỉ</th>
                 <th>Admin</th>
                 <th>Trạng Thái Email</th>
                 <th>Chức Năng</th>
@@ -23,6 +24,7 @@
                         <td>{{ $admin_user->name }}</td>
                         <td>{{ $admin_user->email }}</td>
                         <td>{{ $admin_user->phone }}</td>
+                        <td>{{ $admin_user->address}}</td> <!-- Thêm cột địa chỉ -->
                         <td>{{ $admin_user->is_admin }}</td>
                         <td>{{ $admin_user->email_verified_at ? 'Đã xác thực' : 'Chưa xác thực' }}</td>
                         <td>

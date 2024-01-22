@@ -27,9 +27,9 @@ class InvoiceController extends Controller
                 'status' => 4,  
             ]);
 
-            return redirect()->route('show.invoice', $invoice->id)->with('success', 'Đơn hàng đã được hủy thành công.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('success', 'Đơn hàng đã được hủy thành công.');
         } else {
-            return redirect()->route('show.invoice', $invoice->id)->with('error', 'Không thể hủy đơn hàng.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('error', 'Không thể hủy đơn hàng.');
         }
     }
     public function markTransporting($id)
@@ -42,9 +42,9 @@ class InvoiceController extends Controller
                 'status' => 'Transporting',
             ]);
 
-            return redirect()->route('show.invoice', $invoice->id)->with('success', 'Đơn hàng đang được vận chuyển.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('success', 'Đơn hàng đang được vận chuyển.');
         } else {
-            return redirect()->route('show.invoice', $invoice->id)->with('error', 'Không thể cập nhật trạng thái vận chuyển.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('error', 'Không thể cập nhật trạng thái vận chuyển.');
         }
     }
 
@@ -58,9 +58,9 @@ class InvoiceController extends Controller
                 'status' => 'Paid',
             ]);
 
-            return redirect()->route('show.invoice', $invoice->id)->with('success', 'Đơn hàng đã được thanh toán.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('success', 'Đơn hàng đã được thanh toán.');
         } else {
-            return redirect()->route('show.invoice', $invoice->id)->with('error', 'Không thể cập nhật trạng thái thanh toán.');
+            return redirect()->route('user.orders.show', $invoice->id)->with('error', 'Không thể cập nhật trạng thái thanh toán.');
         }
     }
 }

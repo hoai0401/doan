@@ -168,7 +168,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('promotions.index') }}" class="nav-link">
                       <i class="nav-icon fas fa-percent"></i>
                       <p>
                         Quản lý Khuyến Mãi

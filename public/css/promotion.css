@@ -1,0 +1,25 @@
+.promotions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.promotions-table th, .promotions-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.promotions-table th {
+    background-color: #f2f2f2;
+}
+
+.create-promotion-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}

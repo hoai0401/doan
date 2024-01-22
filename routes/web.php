@@ -14,6 +14,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\SaleStatisticsController;
 use App\Http\Controllers\SlideshowController;
 use App\Http\Controllers\UserOderController;
@@ -135,3 +136,8 @@ Route::get('/sale-statistics', [SaleStatisticsController::class, 'index'])->name
 Route::get('/favorites', [FavoriteController::class,'index'])->name('index.fa');
 Route::post('/favorites/{product_id}', [FavoriteController::class,'toggleFavorite'])->name('favor.add');
 Route::delete('/favorites/{product_id}', [FavoriteController::class, 'destroy'])->name('favor.destroy');
+
+//promotions
+Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
+Route::get('/promotions/create', [PromotionController::class, 'create'])->name('promotions.create');
+Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');

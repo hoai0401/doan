@@ -28,7 +28,12 @@
                 <label for="phone">Số điện thoại:</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $admin_user->phone) }}" required>
             </div>
+
             <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $admin_user->address) }}">
+            </div>
+                        <div class="form-group">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="is_admin" name="is_admin" {{ old('is_admin', $admin_user->is_admin) ? 'checked' : '' }}>
                     <label class="form-check-label" for="is_admin">Tài khoản Admin</label>

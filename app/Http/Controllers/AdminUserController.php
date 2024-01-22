@@ -22,30 +22,32 @@ class AdminUserController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users|max:255',
-            'password' => 'required|string|min:8',
-            'phone' => 'required|string|max:255',
-        ]);
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|unique:users|max:255',
+        'password' => 'required|string|min:8',
+        'phone' => 'required|string|max:255',
+        'address' => 'required|string', // Thêm validation cho địa chỉ
+    ]);
 
-        $is_admin = $request->has('is_admin') ? 1 : 0;
-        $emailVerifiedAt = $request->has('email_verified_at') ? now() : null;
+    $is_admin = $request->has('is_admin') ? 1 : 0;
+    $emailVerifiedAt = $request->has('email_verified_at') ? now() : null;
 
-        $user = new User([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'is_admin' => $is_admin,
-            'phone' => $request->phone,
-            'email_verified_at' => $emailVerifiedAt,
-        ]);
+    $user = new User([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'is_admin' => $is_admin,
+        'phone' => $request->phone,
+        'address' => $request->address, // Lưu địa chỉ vào đối tượng User
+        'email_verified_at' => $emailVerifiedAt,
+    ]);
 
-        $user->save();
+    $user->save();
 
-        return redirect()->route('admin_users.index')->with('success', 'Tài khoản đã được thêm thành công.');
-    }
+    return redirect()->route('admin_users.index')->with('success', 'Tài khoản đã được thêm thành công.');
+}
 
     public function edit(User $admin_user)
     {
@@ -54,31 +56,33 @@ class AdminUserController extends Controller
     }
 
     public function update(Request $request, User $admin_user)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $admin_user->id,
-            'password' => 'nullable|string|min:8',
-            'phone' => 'required|string|max:255',
-        ]);
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $admin_user->id,
+        'password' => 'nullable|string|min:8',
+        'phone' => 'required|string|max:255',
+        'address' => 'required|string', // Thêm validation cho địa chỉ
+    ]);
 
-        $is_admin = $request->has('is_admin') ? 1 : 0;
-        $emailVerifiedAt = $request->has('email_verified_at') ? now() : null;
+    $is_admin = $request->has('is_admin') ? 1 : 0;
+    $emailVerifiedAt = $request->has('email_verified_at') ? now() : null;
 
-        $admin_user->name = $request->name;
-        $admin_user->email = $request->email;
-        $admin_user->is_admin = $is_admin;
-        $admin_user->phone = $request->phone;
-        $admin_user->email_verified_at = $emailVerifiedAt;
+    $admin_user->name = $request->name;
+    $admin_user->email = $request->email;
+    $admin_user->is_admin = $is_admin;
+    $admin_user->phone = $request->phone;
+    $admin_user->address = $request->address; // Cập nhật địa chỉ
+    $admin_user->email_verified_at = $emailVerifiedAt;
 
-        if ($request->filled('password')) {
-            $admin_user->password = Hash::make($request->password);
-        }
-
-        $admin_user->save();
-
-        return redirect()->route('admin_users.index')->with('success', 'Tài khoản đã được cập nhật thành công.');
+    if ($request->filled('password')) {
+        $admin_user->password = Hash::make($request->password);
     }
+
+    $admin_user->save();
+
+    return redirect()->route('admin_users.index')->with('success', 'Tài khoản đã được cập nhật thành công.');
+}
 
 
     public function destroy(User $admin_user)

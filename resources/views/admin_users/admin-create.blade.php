@@ -22,9 +22,15 @@
                 <label for="password">Mật khẩu:</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+
             <div class="form-group">
                 <label for="phone">Số điện thoại:</label>
                 <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" class="form-control" id="address" name="address" required>
             </div>
 
             <div class="form-check">
