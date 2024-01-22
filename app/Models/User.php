@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favorite::class);
     }
+    protected $appends = ['new_password'];
+    
+    public function setNewPasswordAttribute($value)
+    {
+        $this->attributes['new_password'] = $value;
+    }
 }

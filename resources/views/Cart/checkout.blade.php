@@ -9,10 +9,10 @@
                 <div class="col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Personal information</h4>
+                            <h4 class="card-title">Thông tin cá nhân</h4>
                             {{-- @dd($userData) --}}
                             <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
+                                <label for="name" class="form-label">Tên</label>
                                 <input type="text" class="form-control" disabled value="{{ $userData[0]->name }}"placeholder="Nhập họ và tên">
                             </div>
                             <div class="mb-3">
@@ -20,11 +20,11 @@
                                 <input type="text" class="form-control" disabled value="{{ $userData[0]->email }}"placeholder="Nhập địa chỉ email">
                             </div>
                             <div class="mb-3">
-                                <label for="phone_number" class="form-label">Phome Number</label>
+                                <label for="phone_number" class="form-label">SĐT</label>
                                 <input type="text" class="form-control" disabled value="{{ $userData[0]->phone }}"placeholder="Nhập số điện thoại">
                             </div>
                             <div class="mb-3">
-                                <label for="apartment_number" class="form-label">Address</label>
+                                <label for="apartment_number" class="form-label">Địa chỉ</label>
                                 <input type="text" placeholder="Nhập địa chỉ nhà" disabled value="{{ $userData[0]->Address}}">
                             </div>
                         </div>
@@ -39,13 +39,13 @@
                 <div class="col-md-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">order information</h4>
+                            <h4 class="card-title">Thông tin đơn hàng</h4>
                             <div class="mb-3">
                                 <div class="info__order-box">
-                                    <span>total product cost: </span>
+                                    <span>Tổng tiền của sản phẩm: </span>
                                     <span>{{ $sumPriceCart }}</span>
                                 </div>
-                                <div><label >Percentage discount: {{intval(session('discount_percentage'))}}%</label></div>
+                                <div><label >Giá trị giảm giá: {{intval(session('discount_percentage'))}}%</label></div>
                             </div>
                             @php 
                                 $pricediscount = 0;
@@ -66,18 +66,14 @@
                                 <div class="flex-w flex-m m-r-20 m-tb-5">
                                     <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
                                         name="coupon" placeholder="Coupon Code">
-                                    {{-- <button type="submit"
-                                            class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-                                        Apply coupon
-                                    </button> --}}
                                 </div>
                             </form>
                             <a href="{{ route('applycoupon') }}" onclick="event.preventDefault(); document.getElementById('voucher').submit();"
                             class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5"
-                            >Apply Coupon</a>
+                            >Chọn Mã Giảm</a>
                             <div class="mb-3">
                                 <div style="color: red; font-weight: bold" class="info__order-box">
-                                    <span>Total: </span>
+                                    <span>Tổng tiền: </span>
                                     <span >{{ $sumPriceCart-$pricediscount }}</span>
                                 </div>
                             <div class="text-center">
@@ -88,17 +84,14 @@
                                 </div>
                                 <br>
                                     <a href="{{ route('order') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                                        Order
+                                        Đặt hàng
                                     </a>
                                 @else
                                 <div class="flex-w flex-t bor12 p-t-15 p-b-30">
                                     <div class="size-100 p-r-18 p-r-0-sm w-full-ssm">
                                     </div>
                                 </div>
-                                    <p style="color: red; font-weight: bold;">Please add products to Order</p>
-                                    {{-- <a href="{{ route('home') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                                        Back to home
-                                    </a> --}}
+                                    <p style="color: red; font-weight: bold;">Hãy thêm sản phẩm vào giỏ hàng</p>
                                 @endif
                             </div>
                         </div>

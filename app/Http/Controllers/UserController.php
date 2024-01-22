@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -35,6 +36,30 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('users.index')->with('success', 'User updated successfully!');
+    }
+    public function changePassword($userId)
+    {
+        $user = User::find($userId);
+        return view('user.change-password', compact('user'));
+    }
+
+    public function updatePassword(Request $request, User $user)
+    {
+        $request->validate([
+            'current_password' => 'required|string',
+            'password' => 'required|string|min:8',
+        ]);
+
+        // Kiểm tra mật khẩu cũ
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            return redirect()->back()->withErrors(['current_password' => 'Incorrect current password.'])->withInput();
+        }
+
+        $user->update([
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+        return redirect()->route('users.index')->with('success', 'Password updated successfully!');
     }
 }
 

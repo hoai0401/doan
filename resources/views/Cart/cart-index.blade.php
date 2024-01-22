@@ -59,7 +59,7 @@
             <h3 id="totalAmount">Tổng tiền: {{$totalAmount}}</h3>
         </div>
         <a href="{{route('checkout')}}" class="checkout-btn">
-            Check Out
+            Thanh Toán
         </a>
     </div>
     

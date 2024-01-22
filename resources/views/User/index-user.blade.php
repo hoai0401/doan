@@ -20,6 +20,9 @@
                     <td>
                         <a href="{{ route('users.edit', Auth::user()->id) }}">Chỉnh sửa</a>
                     </td>
+                    <td>
+                        <a href="{{route('users.change-password',Auth::user()->id)}}">Đổi mật khẩu</a>
+                    </td>
                 </tr>
             @endif
         </tbody>

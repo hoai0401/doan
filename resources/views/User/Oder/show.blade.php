@@ -2,20 +2,20 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/invoicedetail.css') }}">
-    <h1>Order Details</h1>
+    <h1>Chi Tiết Đơn Hàng</h1>
     <div class="order-details">
-        <p><strong>Issued Date:</strong> {{ $invoice->issued_date }}</p>
-        <p><strong>Shipping Address:</strong> {{ $invoice->shipping_address }}</p>
-        <p><strong>Shipping Phone:</strong> {{ $invoice->shipping_phone }}</p>
-        <p><strong>Status:</strong> {{ $invoice->status }}</p>
+        <p><strong>Ngày lập:</strong> {{ $invoice->issued_date }}</p>
+        <p><strong>Địa Chỉ:</strong> {{ $invoice->shipping_address }}</p>
+        <p><strong>SĐT:</strong> {{ $invoice->shipping_phone }}</p>
+        <p><strong>Trạng Thái:</strong> {{ $invoice->status }}</p>
     </div>
-    <h2>Order Items</h2>
+    <h2>Danh Sách Đơn Hàng</h2>
     <table class="order-items">
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
+                <th>Sản Phẩm</th>
+                <th>Số Lượng</th>
+                <th>Giá Bán</th>
             </tr>
         </thead>
         <tbody>
