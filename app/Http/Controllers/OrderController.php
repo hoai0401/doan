@@ -35,7 +35,7 @@ class OrderController extends Controller
 
                 $totalAmount = $totalAmount - ($totalAmount * $voucherdata->discount_percentage/ 100);
                 $idvoucher = $voucherdata->id;
-            }
+            }   
             // dd($idvoucher,$totalAmount);
             $invoice=Invoice::create([
                 $request->except('_token'),
