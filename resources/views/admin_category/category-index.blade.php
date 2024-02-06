@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <a href="{{ route('categories.update', ['category' => $category]) }}" class="btn btn-warning">Sửa</a>
+                        <a href="{{ route('categories.edit', ['category' => $category]) }}" class="btn btn-warning">Sửa</a>
                         <form method="post" action="{{ route('categories.destroy', ['category' => $category]) }}" style="display: inline-block;">
                             @csrf
                             @method('DELETE')

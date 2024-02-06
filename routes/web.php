@@ -35,10 +35,10 @@ Route::get('/search', [ProductController::class, 'search'])->name('products.sear
 //loại sản phẩm
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
-Route::get('/categories/{id}', [HomeController::class, 'show'])->name('User.show');
+Route::get('/categories/{id}', [HomeController::class, 'show'])->name('user.show'); // Đổi tên route show thành 'user.show'
 Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
-Route::get('/categories/{category}', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit'); // Đổi tên route edit thành 'categories.edit'
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
 

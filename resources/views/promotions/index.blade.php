@@ -9,6 +9,7 @@
             <tr>
                 <th>Tên</th>
                 <th>Phần trăm Giảm giá</th>
+                <th>Mô tả</th>
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
                 <th>Trạng thái</th>
@@ -19,6 +20,7 @@
                 <tr>
                     <td>{{ $promotion->name }}</td>
                     <td>{{ $promotion->discount_percentage }}</td>
+                    <td>{{$promotion->description }}</td>
                     <td>{{ $promotion->start_date ?: 'Không có' }}</td>
                     <td>{{ $promotion->end_date ?: 'Không có' }}</td>
                     <td>

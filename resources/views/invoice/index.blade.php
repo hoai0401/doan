@@ -7,17 +7,14 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Khách hàng</th>
-                <th>Ngày lập hóa đơn</th>
-                <th>Địa chỉ</th>
-                <th>SĐT</th>
-                <th>Thông tin đơn hàng</th>
+               
                 <th>Người dùng</th>
                 <th>Ngày Hóa đơn</th>
                 <th>Địa chỉ</th>
                 <th>Điện thoại</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>
+                
             </tr>
         </thead>
         <tbody>
