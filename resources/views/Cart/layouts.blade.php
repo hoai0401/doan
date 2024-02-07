@@ -38,31 +38,31 @@
         <div class="menu">
             <li><a href="">Áo</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
+                    <li><a href="{{ route('user.show', ['id' => 1]) }}">Áo Polo</a></li>
+                    <li><a href="{{ route('user.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                    <li><a href="{{ route('user.show', ['id' => 5]) }}">Áo Thun</a></li>
                 </ul>
             </li>
             <li><a href="">QUẦN</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
-                    <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
+                    <li><a href="{{ route('user.show', ['id' => 3]) }}">Quần Jean</a></li>
+                    <li><a href="{{ route('user.show', ['id' => 4]) }}">Quần Tây</a></li>
                 </ul>
             </li>
             <li><a  href="">BỘ SƯU TẬP</a>
                 <ul class="sub-menu">
                     <li><a href="">Áo</a>
                         <ul>
-                            <li><a href="{{ route('User.show', ['id' => 1]) }}">Áo Polo</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 2]) }}">Áo Khoác</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 5]) }}">Áo Thun</a></li>
+                            <li><a href="{{ route('user.show', ['id' => 1]) }}">Áo Polo</a></li>
+                            <li><a href="{{ route('user.show', ['id' => 2]) }}">Áo Khoác</a></li>
+                            <li><a href="{{ route('user.show', ['id' => 5]) }}">Áo Thun</a></li>
                         </ul>
                     </li>
 
                     <li><a href="">Quần</a>
                         <ul>
-                            <li><a href="{{ route('User.show', ['id' => 3]) }}">Quần Jean</a></li>
-                            <li><a href="{{ route('User.show', ['id' => 4]) }}">Quần Tây</a></li>
+                            <li><a href="{{ route('user.show', ['id' => 3]) }}">Quần Jean</a></li>
+                            <li><a href="{{ route('user.show', ['id' => 4]) }}">Quần Tây</a></li>
                         </ul>
                     </li>
                 </ul>
